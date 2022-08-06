@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url("@/static/fonts/Montserrat-Black.ttf") format("ttf"),
+}
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("@/static/fonts/Montserrat-Light.ttf") format("ttf"),
+}
+
+// COLOR
+$color-black: #000;
+
+// FONTS
+$font-montserrat-black: "Montserrat-Black", sans-serif;
+$font-montserrat-light: "Montserrat-Light", sans-serif;
+
+// TRANSITION
+$current-transition: .3s ease-in-out;

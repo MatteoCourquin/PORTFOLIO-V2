@@ -1,29 +1,110 @@
 <template>
   <div>
-
-    <header class="flex items-center justify-center">
-      <h1>Template Nuxt</h1>
+    <header>
+      <div class="container-burger">
+        <div class="btn-burger">
+          <div class="lignes"></div>
+          <div class="lignes"></div>
+          <div class="lignes"></div>
+        </div>
+        <img class="burger-circle" :src="burgerCircle" />
+      </div>
     </header>
-
   </div>
 </template>
 
 <script>
+
+import burgerCircle from "@/static/images/logos/burger-circle.svg"
+
 export default {
 
-}
+  data() {
+    return {
+      burgerCircle,
+    };
+  },
+  methods: {
+
+  },
+};
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+
+@keyframes rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
 
 header{
-  width: 100%;
-  height: 70px;
+  width: 220px;
+  height: 100vh;
 
-  background: $color-black;
-  
-  h1{
-    color: $color-yellow;
+  position: fixed;
+  right: 0;
+
+  border-left: 2px solid $color-black;
+
+  z-index: 9999;
+  .container-burger{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 20px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // backdrop-filter: blur( 6.5px );
+    // -webkit-backdrop-filter: blur( 6.5px );
+    .btn-burger{
+        width: 50px;
+        height: 40px;
+
+        cursor: pointer;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: column;
+
+        z-index: 9999;
+        .lignes{
+          width: 100%;
+          height: 2px;
+
+          transition: $current-transition;
+
+          background-color: $color-black;
+          &:nth-child(2){
+            width: 50%;
+          }
+          &:nth-child(3){
+            width: 70%;
+          }
+        }
+
+        &:hover{
+          .lignes{
+            width: 100%;
+          }
+        }
+      }
+
+    .burger-circle{
+      padding: 20px;
+      width: 100%;
+      position: absolute;
+
+      animation: rotate 10s infinite linear;
+    }
   }
 }
 
