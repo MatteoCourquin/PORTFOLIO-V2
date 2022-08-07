@@ -1,15 +1,40 @@
 .container-section{
   display: flex;
   flex-direction: row-reverse;
+  
+  @include screen-m {
+    flex-direction: column;
+  }
   .title-section{
-    h2{
+    @include screen-m {
+      width: calc(100% - 150px);
+
       position: sticky;
       top: 0;
+
+      backdrop-filter: blur( 50px );
+      -webkit-backdrop-filter: blur( 50px );
+    }
+    h2{
+      position: sticky;
+      color: $color-black;
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      top: 0;
       padding-top: 220px;
+      line-height: 220px;
+      @include screen-m {
+        line-height: 140px;
+        padding: 0 clamp(20px, 4vw, 60px);
+        padding-top: 0;
+        writing-mode: initial;
+        text-orientation: initial;
+      }
     }
   }
   .section{
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
+    padding: clamp(20px, 4vw, 60px);
   }
 }

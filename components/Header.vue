@@ -47,7 +47,6 @@ header{
 
   position: fixed;
   right: 0;
-
   @media screen and (min-width : 2000px) {
     right: calc((100vw - 2000px) / 2);
   }
@@ -55,6 +54,12 @@ header{
   border-left: 2px solid $color-black;
 
   z-index: 9999;
+
+  @include screen-m {
+    width: 150px;
+    height: 120px;
+    border: none;
+  }
   .container-burger{
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -68,6 +73,12 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include screen-m {
+      justify-content: flex-end;
+      aspect-ratio: initial;
+      padding: 50px;
+    }
     .btn-burger{
         width: 50px;
         height: 40px;
@@ -108,6 +119,10 @@ header{
       position: absolute;
 
       animation: rotate 10s infinite linear;
+
+      @include screen-m {
+        display: none;
+      }
     }
   }
 }
