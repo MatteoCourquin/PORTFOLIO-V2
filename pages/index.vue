@@ -3,6 +3,8 @@
     <Header/>
     <Hero/>
     <Section/>
+    <Section/>
+    <Section/>
     <Elements/>
   </div>
 </template>
@@ -20,13 +22,14 @@ export default {
 @import "../assets/scss/main.scss";
 
 body{
+  position: relative;
+  max-width: 2000px;
+  margin: 0 auto;
   background-image: url("@/static/images/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  // backdrop-filter: blur( 6.5px );
-  // -webkit-backdrop-filter: blur( 6.5px );
 }
 
 </style>

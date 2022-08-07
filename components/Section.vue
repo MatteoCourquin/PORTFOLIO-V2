@@ -4,7 +4,7 @@
       <h2>Projets</h2>
     </div>
     <div class="section">
-      <!-- ... -->
+      <img :src="profileImg">
     </div>
   </div>
 </template>

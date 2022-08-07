@@ -3,15 +3,27 @@
   src: url("@/static/fonts/Montserrat-Black.ttf") format("ttf"),
 }
 @font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url("@/static/fonts/Montserrat-ExtraBold.ttf") format("ttf"),
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("@/static/fonts/Montserrat-Bold.ttf") format("ttf"),
+}
+@font-face {
   font-family: "Montserrat-Light";
   src: url("@/static/fonts/Montserrat-Light.ttf") format("ttf"),
 }
 
 // COLOR
 $color-black: #000;
+$color-blue: #B8E1FF;
+$color-purple: #BCB6FF;
 
 // FONTS
 $font-montserrat-black: "Montserrat-Black", sans-serif;
+$font-montserrat-extra-bold: "Montserrat-ExtraBold", sans-serif;
+$font-montserrat-bold: "Montserrat-Bold", sans-serif;
 $font-montserrat-light: "Montserrat-Light", sans-serif;
 
 // TRANSITION

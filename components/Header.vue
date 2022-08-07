@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header-container">
     <header>
       <div class="container-burger">
         <div class="btn-burger">
@@ -48,6 +48,10 @@ header{
   position: fixed;
   right: 0;
 
+  @media screen and (min-width : 2000px) {
+    right: calc((100vw - 2000px) / 2);
+  }
+
   border-left: 2px solid $color-black;
 
   z-index: 9999;
@@ -58,12 +62,12 @@ header{
 
     position: relative;
 
+    backdrop-filter: blur( 50px );
+    -webkit-backdrop-filter: blur( 50px );
+
     display: flex;
     justify-content: center;
     align-items: center;
-
-    // backdrop-filter: blur( 6.5px );
-    // -webkit-backdrop-filter: blur( 6.5px );
     .btn-burger{
         width: 50px;
         height: 40px;
