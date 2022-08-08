@@ -2,8 +2,7 @@
   <div>
     <Header/>
     <Hero/>
-    <Section/>
-    <Section/>
+    <Project/>
     <Section/>
     <Elements/>
   </div>
@@ -23,8 +22,10 @@ export default {
 
 body{
   position: relative;
+
   max-width: 2000px;
   margin: 0 auto;
+
   background-image: url("@/static/images/background.png");
   background-position: center;
   background-repeat: no-repeat;

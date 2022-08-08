@@ -9,18 +9,18 @@
       <button class="button">Contact</button>
     </div>
     <div class="container-image">
-      <img :src="profileImg">
+      <nuxt-img preload src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.years }}</span>an</p>
+      <p class="coding-since-items"><span class="coding-since-number">{{ date.years }}</span>{{ isPlural(date.years, "an") }}</p>
       <div class="coding-since-lines"></div>
       <p class="coding-since-items"><span class="coding-since-number">{{ date.months }}</span>mois</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.days }}</span>jours</p>
+      <p class="coding-since-items"><span class="coding-since-number">{{ date.days }}</span>{{ isPlural(date.days, "jour") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.hours }}</span>heures</p>
+      <p class="coding-since-items"><span class="coding-since-number">{{ date.hours }}</span>{{ isPlural(date.hours, "heure") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.minutes }}</span>minutes</p>
+      <p class="coding-since-items"><span class="coding-since-number">{{ date.minutes }}</span>{{ isPlural(date.minutes, "minute") }}</p>
       <!-- <span class="coding-since-items"><span class="coding-since-number">{{ date.seconds }}</span>seconds</span> -->
     </div>
   </div>
@@ -28,13 +28,9 @@
 
 <script>
 
-  import profileImg from "@/static/images/profile-img.png"
-
   export default {
   data() {
     return {
-      profileImg,
-
       date: {
         years: Number,
         months: Number,
@@ -48,7 +44,10 @@
   methods: {
     addZero(i) {
       return i.toString().length < 2 ? i = "0" + i : i = i
-    }
+    },
+    isPlural(number, word) {
+      return number > 1 ? word + "s" : word
+    },
   },
   mounted() {
     let dateNow = new Date()
@@ -75,8 +74,8 @@
   z-index: -1;
 }
 .hero-rectangle:nth-child(1){
-  top: 30%;
-  height: clamp(50px, 5vw, 100px);
+  top: 25%;
+  height: clamp(50px, 6vw, 90px);
   aspect-ratio: 10 / 5;
 }
 .hero-rectangle:nth-child(2){

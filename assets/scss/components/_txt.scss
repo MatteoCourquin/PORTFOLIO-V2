@@ -10,6 +10,11 @@ h2{
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     text-transform: uppercase;
 }
+h3{
+    font-family: $font-montserrat-regular;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+
+}
 
 p{
     font-family: $font-montserrat-light;

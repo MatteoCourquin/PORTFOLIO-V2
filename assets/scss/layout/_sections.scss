@@ -34,7 +34,11 @@
   }
   .section{
     width: 100%;
+    min-height: calc(100vh - 220px);
+
+    padding: 0 clamp(20px, 4vw, 60px);
+    margin-top: 220px;
+
     overflow: hidden;
-    padding: clamp(20px, 4vw, 60px);
   }
 }
