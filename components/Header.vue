@@ -34,7 +34,7 @@ export default {
 
   data() {
     return {
-      isActive: true,
+      isActive: false,
     };
   },
   methods: {
@@ -55,18 +55,21 @@ export default {
 }
 
 header{
-  width: calc(100vw - 220px);
+  width: 100vw;
   height: 100vh;
+  padding-right: 220px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   position: absolute;
-  top: -100vh;
+  top: 0;
   left: 0;
 
-  transition: .4s;
+  transform: translateY(-100%);
+
+  transition: .3s;
   z-index: 99;
 
   background-image: url("../static/images/background.png");
@@ -76,7 +79,7 @@ header{
   background-attachment: fixed;
 
   @include screen-m {
-    width: 100vw;
+    padding-right: 0;
   }
 
   ul{
@@ -97,7 +100,7 @@ header{
   }
 }
 header.active{
-  top: 0;
+  transform: translateY(0);
 }
 
 .header{

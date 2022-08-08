@@ -94,8 +94,15 @@ data() {
       }
     }
     grid-template-columns: 3fr 2fr;
+    @include screen-m {
+      display: flex;
+      flex-direction: column;
+    }
     &:nth-child(even){
       grid-template-columns: 2fr 3fr;
+      @include screen-m {
+        flex-direction: column-reverse;
+      }
     }
   }
   .all-project{
