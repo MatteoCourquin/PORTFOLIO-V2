@@ -1,6 +1,10 @@
 .container-section{
   display: flex;
   flex-direction: row-reverse;
+
+  &:last-child{
+    margin-bottom: 50vh;
+  }
   
   @include screen-m {
     flex-direction: column;
