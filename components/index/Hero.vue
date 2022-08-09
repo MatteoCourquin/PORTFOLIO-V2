@@ -12,16 +12,15 @@
       <nuxt-img preload src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
-      <p class="coding-since-items"><span class="number">{{ date.years }}</span>{{ isPlural(date.years, "an") }}</p>
+      <p class="coding-since-items"><span class="number">{{ years }}</span>{{ isPlural(years, "an") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ date.months }}</span>mois</p>
+      <p class="coding-since-items"><span class="number">{{ months }}</span>mois</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ date.days }}</span>{{ isPlural(date.days, "jour") }}</p>
+      <p class="coding-since-items"><span class="number">{{ days }}</span>{{ isPlural(days, "jour") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ date.hours }}</span>{{ isPlural(date.hours, "heure") }}</p>
+      <p class="coding-since-items"><span class="number">{{ hours }}</span>{{ isPlural(hours, "heure") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ date.minutes }}</span>{{ isPlural(date.minutes, "minute") }}</p>
-      <!-- <span class="coding-since-items"><span class="coding-since-number">{{ date.seconds }}</span>seconds</span> -->
+      <p class="coding-since-items"><span class="number">{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
     </div>
   </div>
 </template>
@@ -31,14 +30,12 @@
   export default {
   data() {
     return {
-      date: {
-        years: Number,
-        months: Number,
-        days: Number,
-        hours: Number,
-        minutes: Number,
-        seconds: Number,
-      }
+      years: "",
+      months: "",
+      days: "",
+      hours: "",
+      minutes: "",
+      seconds: "",
     };
   },
   methods: {
@@ -55,12 +52,11 @@
 
     let tmp = dateNow - codingSince;
 
-    this.date.years = this.addZero(Math.floor(tmp / 31536000000));
-    this.date.months = this.addZero(Math.floor((tmp % 31536000000) / 2628000000));
-    this.date.days = this.addZero(Math.floor((tmp % 2628000000) / 86400000));
-    this.date.hours = this.addZero(Math.floor((tmp % 86400000) / 3600000));
-    this.date.minutes = this.addZero(Math.floor((tmp % 3600000) / 60000));
-    this.date.seconds = this.addZero(Math.floor((tmp % 60000) / 1000));
+    this.years = this.addZero(Math.floor(tmp / 31536000000));
+    this.months = this.addZero(Math.floor((tmp % 31536000000) / 2628000000));
+    this.days = this.addZero(Math.floor((tmp % 2628000000) / 86400000));
+    this.hours = this.addZero(Math.floor((tmp % 86400000) / 3600000));
+    this.minutes = this.addZero(Math.floor((tmp % 3600000) / 60000));
   },
 }
 

@@ -5,6 +5,8 @@
     <Projects/>
     <Career/>
     <About/>
+    <About/>
+    <About/>
     <!-- <Section/>
     <Elements/> -->
   </div>

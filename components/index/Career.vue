@@ -1,9 +1,12 @@
 <template>
   <div class="container-section">
+    <div ref="cursor" v-bind:class="[cursorActive ? 'active' : '', 'cursor-career']">
+      <div class="cursor-line"><div class="cursor-arrow"></div></div>
+    </div>
     <div class="title-section">
       <h2>Carière</h2>
     </div>
-    <section class="section career">
+    <section class="section career" @mousemove="changeCursor()" @mouseleave="cursorActive = false">
         <div class="container-card-career">
           <!-- Card Career -->
           <div class="card-career first-card-career">
@@ -23,7 +26,7 @@
           </div>
         </div>
         <div class="time-line">
-          <div class="arrow"></div>
+          <div class="time-line-arrow"></div>
         </div>
         <div class="container-card-career">
           <!-- Card Career -->
@@ -42,31 +45,57 @@
 <script>
 
 export default {
-data() {
-  return {
 
-  };
-},
+  data() {
+    return {
+      cursorActive: false,
+    };
+  },
+  methods: {
+    changeCursor() {
+      this.cursorActive = true;
+
+      let top = event.pageY + "px";
+      let left = event.pageX + "px";
+
+      if (window.innerWidth >= 2000) {
+        left = `calc(${event.pageX}px - (100vw - 2000px) / 2)`
+      }
+
+      this.$refs.cursor.setAttribute('style', `top: ${top}; left: ${left}; `)
+    }
+  },
+  mounted() {
+    if((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)){
+        this.cursorActive = false
+    }
+  },
 }
 
 </script>
 
 <style scoped lang='scss'>
+
 .career{
   overflow: scroll !important;
   display: flex;
   flex-direction: column;
   width: max-content;
+  cursor: normal;
+
+  @include screen-m {
+    justify-content: center;
+  }
   &::-webkit-scrollbar {
     display: none;
   }
   .time-line{
-    width: 100vw;
+    width: 1300px;
     height: 2px;
     background: $color-black;
 
     position: relative;
-    .arrow{
+    .time-line-arrow{
       width: 30px;
       height: 30px;
 
@@ -83,7 +112,7 @@ data() {
     display: flex;
     .card-career{
       width: fit-content;
-      min-width: 200px;
+      min-width: 400px;
       height: 200px;
 
       display: flex;
@@ -102,10 +131,10 @@ data() {
 
         left: 0;
         position: absolute;
-        z-index: -1;
+        z-index: -2;
       }
       .line{
-        width: 20%;
+        width: 90px;
         height: 2px;
         background: $color-black;
         margin: 10px 0;

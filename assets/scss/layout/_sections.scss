@@ -8,11 +8,10 @@
   .title-section{
     z-index: 9;
     @include screen-m {
-      width: calc(100% - 150px);
+      width: 100%;
 
       position: sticky;
       top: 0;
-
 
       backdrop-filter: blur(50px);
       -webkit-backdrop-filter: blur(50px);
@@ -41,7 +40,8 @@
     margin: 220px 0 30px 0;
     
     @include screen-m {
-      margin: 0 0 30px 0;
+      margin: 10px 0 30px 0;
+      min-height: 100vh;
     }
 
     overflow: hidden;

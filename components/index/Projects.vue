@@ -7,7 +7,7 @@
 
       <div class="card-project">
         <div class="project-image">
-          <nuxt-img src="/images/projects/project01.png" />
+          <nuxt-img preload src="/images/projects/project01.png" />
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -28,7 +28,7 @@
           <button class="button">Projet</button>
         </div>
         <div class="project-image">
-          <nuxt-img src="/images/projects/project01.png" />
+          <nuxt-img preload src="/images/projects/project01.png" />
           <div class="rectangle-image"></div>
         </div>
       </div>
