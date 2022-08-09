@@ -11,7 +11,7 @@
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
-          <span>01</span>
+          <span class="number">01</span>
           <div class="line"></div>
           <h3>NL • Architecture</h3>
           <p>Intégration de la maquette de Naila</p>
@@ -21,7 +21,7 @@
 
       <div class="card-project">
         <div class="project-description">
-          <span>02</span>
+          <span class="number">02</span>
           <div class="line"></div>
           <h3>NL • Architecture</h3>
           <p>Intégration de la maquette de Naila</p>
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <button class="button all-project">Tout les projets</button>
+      <nuxt-link to="/projects"><button class="button all-project">Tout les projets</button></nuxt-link>
 
     </section>
   </div>
@@ -68,10 +68,6 @@ data() {
         background: $color-black;
         margin: 20px 0;
       }
-      span{
-        font-size: clamp(20px, 5vw, 80px);
-        font-family: $font-montserrat-extra-bold;
-      }
       button{
         margin-top: 2vw;
       }
@@ -81,14 +77,14 @@ data() {
       position: relative;
       img{
         width: 93%;
-        z-index: 99;
+        z-index: 3;
       }
       .rectangle-image{
         position: absolute;
         right: 0;
         bottom: 0;
-        width: 80%;
-        height: 80px;
+        width: 70%;
+        height: 70px;
         background: $color-white;
         transform: translateY(40%);
       }

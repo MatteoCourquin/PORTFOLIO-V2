@@ -13,9 +13,32 @@ h2{
 h3{
     font-family: $font-montserrat-regular;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
-
+    text-transform: camelcase;
+}
+.number{
+    font-size: clamp(40px, 5vw, 80px);
+    font-family: $font-montserrat-extra-bold;
 }
 
 p{
     font-family: $font-montserrat-light;
+}
+
+.links{
+    cursor: pointer;
+    color: $color-black;
+    transition: all .1s;
+    &:hover{
+      background-image: linear-gradient(
+        to right,
+        $color-black,
+        $color-black 50%,
+        $color-white 50%,
+      );
+      background-size: 200% 100%;
+      background-position: -100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: $current-transition;
+    }
 }

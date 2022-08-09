@@ -16,3 +16,11 @@
         @content
     }
 };
+
+@mixin background-image {
+    background-image: url("~static/images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

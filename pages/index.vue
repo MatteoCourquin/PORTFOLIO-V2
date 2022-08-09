@@ -2,16 +2,23 @@
   <div>
     <Header/>
     <Hero/>
-    <Project/>
-    <Section/>
-    <Elements/>
+    <Projects/>
+    <Career/>
+    <About/>
+    <!-- <Section/>
+    <Elements/> -->
   </div>
 </template>
 
 <script>
+import Header from '../components/Header.vue';
+import Hero from '../components/index/Hero.vue';
+import Projects from '../components/index/Projects.vue';
+import Career from '../components/index/Career.vue';
+import About from '../components/index/About.vue';
 
 export default {
-
+    components: { Header, Hero, Projects, Career, About }
 }
 
 </script>
@@ -26,11 +33,7 @@ body{
   max-width: 2000px;
   margin: 0 auto;
 
-  background-image: url("@/static/images/background.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  @include background-image;
 }
 
 </style>

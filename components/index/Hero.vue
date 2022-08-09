@@ -12,15 +12,15 @@
       <nuxt-img preload src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.years }}</span>{{ isPlural(date.years, "an") }}</p>
+      <p class="coding-since-items"><span class="number">{{ date.years }}</span>{{ isPlural(date.years, "an") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.months }}</span>mois</p>
+      <p class="coding-since-items"><span class="number">{{ date.months }}</span>mois</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.days }}</span>{{ isPlural(date.days, "jour") }}</p>
+      <p class="coding-since-items"><span class="number">{{ date.days }}</span>{{ isPlural(date.days, "jour") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.hours }}</span>{{ isPlural(date.hours, "heure") }}</p>
+      <p class="coding-since-items"><span class="number">{{ date.hours }}</span>{{ isPlural(date.hours, "heure") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="coding-since-number">{{ date.minutes }}</span>{{ isPlural(date.minutes, "minute") }}</p>
+      <p class="coding-since-items"><span class="number">{{ date.minutes }}</span>{{ isPlural(date.minutes, "minute") }}</p>
       <!-- <span class="coding-since-items"><span class="coding-since-number">{{ date.seconds }}</span>seconds</span> -->
     </div>
   </div>
@@ -166,11 +166,8 @@
       @include screen-s {
         padding: 0;
       }
-      .coding-since-number{
+      .number{
         margin-right: 5px;
-
-        font-size: clamp(20px, 5vw, 80px);
-        font-family: $font-montserrat-extra-bold;
       }
     }
   }
