@@ -5,8 +5,8 @@
     <Projects/>
     <Career/>
     <About/>
-    <!-- <Section/>
-    <Elements/> -->
+    <Section/>
+    <Elements/>
   </div>
 </template>
 

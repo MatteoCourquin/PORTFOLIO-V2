@@ -6,7 +6,7 @@
     <div class="title-section">
       <h2>Carière</h2>
     </div>
-    <section class="section career" @mousemove="changeCursor()" @mouseleave="cursorActive = false">
+    <section ref="sectionCareer" class="section career" @click="scroll()" @mousemove="changeCursor()" @mouseleave="cursorActive = false">
         <div class="container-card-career">
           <!-- Card Career -->
           <div class="card-career first-card-career">
@@ -25,7 +25,7 @@
             <div class="rectangle"></div>
           </div>
         </div>
-        <div class="time-line">
+        <div ref="timeLine" class="time-line">
           <div class="time-line-arrow"></div>
         </div>
         <div class="container-card-career">
@@ -49,20 +49,67 @@ export default {
   data() {
     return {
       cursorActive: false,
+
+      padding: 0,
+      windowWidth: window.innerWidth - 220,
     };
   },
   methods: {
     changeCursor() {
       this.cursorActive = true;
 
-      let top = event.pageY + "px";
-      let left = event.pageX + "px";
+      this.returnArrow(event.pageY, event.pageX)
+    },
+    returnArrow(top, left) {
 
       if (window.innerWidth >= 2000) {
-        left = `calc(${event.pageX}px - (100vw - 2000px) / 2)`
+        this.left = `calc(${event.pageX}px - (100vw - 2000px) / 2)`
       }
 
-      this.$refs.cursor.setAttribute('style', `top: ${top}; left: ${left}; `)
+      let containerWidth = this.$refs.timeLine.offsetWidth
+      let scrollPosition = this.$refs.sectionCareer.scrollLeft
+
+      this.getPadding()
+
+      let maxScroll = Math.round((containerWidth - this.windowWidth) + (this.padding * 2) - 100)
+
+      this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%); transition: transform 0.3s ease;`)
+
+      if (maxScroll <= scrollPosition) {
+        this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%) rotate(-180deg); transition: transform 0.3s ease;`)
+      }
+
+    },
+    scroll() {
+      let containerWidth = this.$refs.timeLine.offsetWidth
+      let scrollPosition = this.$refs.sectionCareer.scrollLeft
+      let maxScroll = Math.round((containerWidth - this.windowWidth) + (this.padding * 2))
+
+      let top = event.pageY
+      let left = event.pageX
+
+      this.getPadding()
+
+      this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%) rotate(-180deg); transition: transform 0.5s ease;`)
+
+      if ((maxScroll - 100) <= scrollPosition) {
+        this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%) rotate(0); transition: transform 0.5s ease;`)
+        maxScroll = 0
+      }
+
+      this.$refs.sectionCareer.scroll({
+        left: maxScroll,
+        behavior: 'smooth'
+      });
+    },
+    getPadding() {
+      if (window.innerWidth <= 500) {
+        this.padding = 20
+      } else if (window.innerWidth > 500 && window.innerWidth < 1500) {
+        this.padding = window.innerWidth * 0.04
+      } else if (window.innerWidth <= 1500) {
+        this.padding = 60
+      }
     }
   },
   mounted() {
@@ -81,7 +128,8 @@ export default {
   display: flex;
   flex-direction: column;
   width: max-content;
-  cursor: normal;
+  cursor: none;
+  transition: all 0.5s ease-in-out;
 
   @include screen-m {
     justify-content: center;
@@ -90,7 +138,7 @@ export default {
     display: none;
   }
   .time-line{
-    width: 1300px;
+    width: 1700px;
     height: 2px;
     background: $color-black;
 
