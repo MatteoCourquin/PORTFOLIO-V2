@@ -14,8 +14,8 @@
           <span class="number">01</span>
           <div class="line"></div>
           <h3>NL • Architecture</h3>
-          <p>Intégration de la maquette de Naila</p>
-          <button class="button">Projet</button>
+          <p>Intégration de la maquette de <a class="links" href="https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page" target="_blank">Nadya Lazurenko</a></p>
+          <a href="https://nl-architecture.courqu.in/" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
           <div class="line"></div>
           <h3>NL • Architecture</h3>
           <p>Intégration de la maquette de Naila</p>
-          <button class="button">Projet</button>
+          <a href="#" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
         <div class="project-image">
           <nuxt-img preload src="/images/projects/project01.png" />
@@ -68,8 +68,8 @@ data() {
         background: $color-black;
         margin: 20px 0;
       }
-      button{
-        margin-top: 2vw;
+      .links{
+        margin-top: 40px;
       }
     }
     .project-image{

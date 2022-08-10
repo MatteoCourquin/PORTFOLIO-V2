@@ -17,6 +17,7 @@ h3{
 }
 .number{
     font-size: clamp(40px, 5vw, 80px);
+    line-height: clamp(40px, 5vw, 80px);
     font-family: $font-montserrat-extra-bold;
 }
 
@@ -26,8 +27,14 @@ p{
 
 .links{
     cursor: pointer;
+    width: fit-content;
     color: $color-black;
     transition: all .1s;
+    img{
+        display: inline-block;
+        transition: $current-transition;
+        transform: translate(3px, -3px);
+      }
     &:hover{
       background-image: linear-gradient(
         to right,
@@ -40,5 +47,8 @@ p{
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       transition: $current-transition;
+      .img-links{
+        transform: translate(8px, -8px);
+      }
     }
 }

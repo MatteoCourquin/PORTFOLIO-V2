@@ -1,8 +1,5 @@
 <template>
   <div class="hero">
-    <div class="hero-rectangle"></div>
-    <div class="hero-rectangle"></div>
-    <div class="hero-rectangle"></div>
     <div class="hero-description">
       <h1>Developpeur <br>Frontend</h1>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus atque magnam animi minus ex facere quia sunt dolore. Deleniti, ipsa.</p>
@@ -63,33 +60,6 @@
 </script>
 
 <style scoped lang='scss'>
-
-.hero-rectangle{
-  position: absolute;
-  background: $color-white;
-  z-index: -1;
-}
-.hero-rectangle:nth-child(1){
-  top: 25%;
-  height: clamp(50px, 6vw, 90px);
-  aspect-ratio: 10 / 5;
-}
-.hero-rectangle:nth-child(2){
-  top: 40%;
-  right: 0;
-  width: clamp(40px, 4vw, 90px);
-  aspect-ratio: 4 / 15;
-}
-.hero-rectangle:nth-child(3){
-  bottom: clamp(20px, 4vw, 60px);
-  right: 30%;
-  height: clamp(30px, 3vw, 70px);
-  aspect-ratio: 10 / 1;
-
-  @include screen-s {
-    display: none;
-  }
-}
 
 .hero{
   width: calc(100% - 220px);

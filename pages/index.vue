@@ -1,12 +1,15 @@
 <template>
   <div>
+    <div class="first-section-rectangle"></div>
+    <div class="first-section-rectangle"></div>
+    <div class="first-section-rectangle"></div>
     <Header/>
     <Hero/>
     <Projects/>
     <Career/>
     <About/>
-    <Section/>
-    <Elements/>
+    <!-- <Section/>
+    <Elements/> -->
   </div>
 </template>
 

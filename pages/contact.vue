@@ -1,8 +1,10 @@
 <template>
   <div>
+    <div class="first-section-rectangle"></div>
+    <div class="first-section-rectangle"></div>
+    <div class="first-section-rectangle"></div>
     <Header/>
     <Contact/>
-    <h1>Page Contact !</h1>
   </div>
 </template>
 

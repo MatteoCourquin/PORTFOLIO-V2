@@ -6,7 +6,7 @@
     <div class="title-section">
       <h2>Carière</h2>
     </div>
-    <section ref="sectionCareer" class="section career" @click="scroll()" @mousemove="changeCursor()" @mouseleave="cursorActive = false">
+    <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false">
         <div class="container-card-career">
           <!-- Card Career -->
           <div class="card-career first-card-career">
@@ -14,6 +14,22 @@
             <p>Développeur Étudiant</p>
             <div class="line"></div>
             <span class="number">2020 - 2023</span>
+            <div class="rectangle"></div>
+          </div>
+          <!-- Card Career -->
+          <div class="card-career">
+            <h3>Master • IIM</h3>
+            <p>Développeur Étudiant</p>
+            <div class="line"></div>
+            <span class="number">2023 - 2025</span>
+            <div class="rectangle"></div>
+          </div>
+          <!-- Card Career -->
+          <div class="card-career">
+            <h3>Master • IIM</h3>
+            <p>Développeur Étudiant</p>
+            <div class="line"></div>
+            <span class="number">2023 - 2025</span>
             <div class="rectangle"></div>
           </div>
           <!-- Card Career -->
@@ -37,6 +53,22 @@
             <span class="number">2022 - En cours</span>
             <div class="rectangle"></div>
           </div>
+          <!-- Card Career -->
+          <div class="card-career">
+            <h3>Fortuneo</h3>
+            <p>Développeur Angular</p>
+            <div class="line"></div>
+            <span class="number">2022 - En cours</span>
+            <div class="rectangle"></div>
+          </div>
+          <!-- Card Career -->
+          <div class="card-career">
+            <h3>Fortuneo</h3>
+            <p>Développeur Angular</p>
+            <div class="line"></div>
+            <span class="number">2022 - En cours</span>
+            <div class="rectangle"></div>
+          </div>
         </div>
     </section>
   </div>
@@ -51,49 +83,64 @@ export default {
       cursorActive: false,
 
       padding: 0,
-      windowWidth: window.innerWidth - 220,
     };
   },
   methods: {
-    changeCursor() {
+    moveCursor() {
       this.cursorActive = true;
 
-      this.returnArrow(event.pageY, event.pageX)
+      this.returnArrow()
     },
-    returnArrow(top, left) {
+    returnArrow() {
 
-      if (window.innerWidth >= 2000) {
-        this.left = `calc(${event.pageX}px - (100vw - 2000px) / 2)`
-      }
+      let top = event.pageY + "px"
+      let left = event.pageX + "px"
 
       let containerWidth = this.$refs.timeLine.offsetWidth
       let scrollPosition = this.$refs.sectionCareer.scrollLeft
+      let windowWidth = window.innerWidth - 220
+
+      if (window.innerWidth >= 2000) {
+        left = `calc(${event.pageX}px - (100vw - 2000px) / 2)`
+        // windowWidth = windowWidth - ((window.innerWidth - 2000) / 2) 
+      }
+
+      console.log("scroll position : " + scrollPosition);
 
       this.getPadding()
 
-      let maxScroll = Math.round((containerWidth - this.windowWidth) + (this.padding * 2) - 100)
+      let maxScroll = Math.round((containerWidth - windowWidth) + (this.padding * 2) - 100)
 
-      this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%); transition: transform 0.3s ease;`)
+      this.$refs.cursor.setAttribute('style', `top: ${top}; left: ${left}; transform: translate(-50%, -50%); transition: transform 0.3s ease;`)
 
       if (maxScroll <= scrollPosition) {
-        this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%) rotate(-180deg); transition: transform 0.3s ease;`)
+        this.$refs.cursor.setAttribute('style', `top: ${top}; left: ${left}; transform: translate(-50%, -50%) rotate(-180deg); transition: transform 0.3s ease;`)
       }
 
     },
     scroll() {
       let containerWidth = this.$refs.timeLine.offsetWidth
       let scrollPosition = this.$refs.sectionCareer.scrollLeft
-      let maxScroll = Math.round((containerWidth - this.windowWidth) + (this.padding * 2))
+      let windowWidth = window.innerWidth - 220
 
-      let top = event.pageY
-      let left = event.pageX
+      let top = event.pageY + "px"
+      let left = event.pageX + "px"
 
       this.getPadding()
 
-      this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%) rotate(-180deg); transition: transform 0.5s ease;`)
+      if (window.innerWidth >= 2000) {
+        left = `calc(${event.pageX}px - (100vw - 2000px) / 2)`
+        windowWidth = windowWidth - ((window.innerWidth - 2000) / 2)
+      }
+
+      let maxScroll = Math.round((containerWidth - windowWidth) + (this.padding * 2))
+
+      console.log(maxScroll);
+
+      this.$refs.cursor.setAttribute('style', `top: ${top}; left: ${left}; transform: translate(-50%, -50%) rotate(-180deg); transition: transform 0.5s ease;`)
 
       if ((maxScroll - 100) <= scrollPosition) {
-        this.$refs.cursor.setAttribute('style', `top: ${top}px; left: ${left}px; transform: translate(-50%, -50%) rotate(0); transition: transform 0.5s ease;`)
+        this.$refs.cursor.setAttribute('style', `top: ${top}; left: ${left}; transform: translate(-50%, -50%) rotate(0); transition: transform 0.5s ease;`)
         maxScroll = 0
       }
 
@@ -110,12 +157,18 @@ export default {
       } else if (window.innerWidth <= 1500) {
         this.padding = 60
       }
+    },
+    isMobile() {
+      if((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)){
+          this.cursorActive = false
+          console.log('mobile');
+      } else {
+        console.log('desktop');
+      }
     }
   },
   mounted() {
-    if((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)){
-        this.cursorActive = false
-    }
+    this.isMobile()
   },
 }
 
@@ -138,7 +191,7 @@ export default {
     display: none;
   }
   .time-line{
-    width: 1700px;
+    width: 3000px;
     height: 2px;
     background: $color-black;
 
