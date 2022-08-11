@@ -161,9 +161,6 @@ export default {
     isMobile() {
       if((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)){
           this.cursorActive = false
-          console.log('mobile');
-      } else {
-        console.log('desktop');
       }
     }
   },

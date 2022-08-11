@@ -3,7 +3,7 @@
     <div class="hero-description">
       <h1>Developpeur <br>Frontend</h1>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus atque magnam animi minus ex facere quia sunt dolore. Deleniti, ipsa.</p>
-      <button class="button">Contact</button>
+      <nuxt-link to="/contact"><button class="button">Contact</button></nuxt-link>
     </div>
     <div class="container-image">
       <nuxt-img preload src='/images/profile-img.png'/>
@@ -44,8 +44,8 @@
     },
   },
   mounted() {
-    let dateNow = new Date()
-    let codingSince = new Date('2020-04-15 16:00:00')
+    let dateNow = new Date();
+    let codingSince = new Date('Wed Apr 15 2020 16:00:00 GMT+0100')
 
     let tmp = dateNow - codingSince;
 
