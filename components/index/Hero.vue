@@ -2,14 +2,13 @@
   <div class="hero">
     <div class="hero-description">
       <h1>Developpeur <br>Frontend</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus atque magnam animi minus ex facere quia sunt dolore. Deleniti, ipsa.</p>
+      <p>Développeur de passion, mon travail est un plaisir. Selon moi, c'est primordial pour faire des projets de qualité ! <br>Votre projet sera peut être le prochain ?</p>
       <nuxt-link to="/contact"><button class="button">Contact</button></nuxt-link>
     </div>
     <div class="container-image">
       <nuxt-img preload src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
-      <p class="since">depuis :</p>
       <p class="coding-since-items"><span class="number"><span v-if="showZero(years)">0</span>{{ years }}</span>{{ isPlural(years, "an") }}</p>
       <div class="coding-since-lines"></div>
       <p class="coding-since-items"><span class="number"><span v-if="showZero(months)">0</span>{{ months }}</span>mois</p>
@@ -151,13 +150,6 @@
       align-items: flex-start;
 
       position: relative;
-    }
-    .since{
-      position: absolute;
-      top: clamp(0px, 0.8vw, 60px);
-      @include screen-xs {
-        top: -30px;
-      }
     }
     .coding-since-lines{
       width: 2px;

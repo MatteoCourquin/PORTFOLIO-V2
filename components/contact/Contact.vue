@@ -5,7 +5,7 @@
     </div>
     <section class="section contact">
       <h1>Un Projet ?</h1>
-      <form method="post" >
+      <form method="post">
        
         <div>
           <input type='text' id='name' name='name' placeholder='Prénom' required />
@@ -31,11 +31,11 @@
 <script>
 
 export default {
-data() {
-  return {
+  data() {
+    return {
 
-  };
-},
+    };
+  },
 }
 
 </script>
