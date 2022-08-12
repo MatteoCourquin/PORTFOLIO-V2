@@ -17,10 +17,10 @@
       <p class="coding-since-items"><span class="number"><span v-if="showZero(days)">0</span>{{ days }}</span>{{ isPlural(days, "jour") }}</p>
       <div class="coding-since-lines"></div>
       <p class="coding-since-items"><span class="number"><span v-if="showZero(hours)">0</span>{{ hours }}</span>{{ isPlural(hours, "heure") }}</p>
-      <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number"><span v-if="showZero(minutes)">0</span>{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
-      <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number"><span v-if="showZero(seconds)">0</span>{{ seconds }}</span>{{ isPlural(seconds, "seconde") }}</p>
+      <div class="minutes coding-since-lines"></div>
+      <p class="minutes coding-since-items"><span class="number"><span v-if="showZero(minutes)">0</span>{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
+      <div class="seconds coding-since-lines"></div>
+      <p class="seconds coding-since-items"><span class="number"><span v-if="showZero(seconds)">0</span>{{ seconds }}</span>{{ isPlural(seconds, "seconde") }}</p>
     </div>
   </div>
 </template>
@@ -168,6 +168,16 @@
       }
       .number{
         margin-right: 5px;
+      }
+    }
+    .seconds{
+      @media screen and (max-width : 1400px) {
+        display: none;
+      }
+    }
+    .minutes{
+      @media screen and (max-width : 1100px) and (min-width : 1000px) {
+        display: none;
       }
     }
   }

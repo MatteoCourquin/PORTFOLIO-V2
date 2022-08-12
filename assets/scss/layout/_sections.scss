@@ -90,7 +90,7 @@
   }
 }
 .first-section-rectangle:nth-child(3){
-  top: calc(100vh - (clamp(30px, 3vw, 70px) / 1.3));
+  top: calc(100vh - clamp(30px, 3vw, 70px));
   right: calc(30vw + 220px);
   height: clamp(30px, 3vw, 70px);
   aspect-ratio: 10 / 1;

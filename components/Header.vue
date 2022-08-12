@@ -72,8 +72,8 @@ header{
   ul{
     li{
       font-family: $font-montserrat-black;
-      font-size: clamp(20px, 5vw, 80px);
-      line-height: clamp(25px, 5.5vw, 100px);
+      font-size: clamp(40px, 5vw, 80px);
+      line-height: clamp(45px, 5.5vw, 100px);
       text-align: center;
     }
   }

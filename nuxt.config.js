@@ -6,7 +6,7 @@ export default {
   head: {
     title: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀",
     htmlAttrs: {
-      lang: 'en'
+      lang: 'fr'
     },
     meta: [
       { charset: 'utf-8' },
@@ -14,17 +14,17 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
       // Open Graph
-      { property: 'og:title', content: "Matteo Courquin | Le Portfolio d'un Étudiant actif !! 🚀" },
+      { property: 'og:title', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
       { property: 'og:description', content: "Étudiant à l'IIM, je ne cesse de monter en compétences ! 🎓  Venez faire un tour sur mon Portfolio. ✅  Mes réalisations sont à la fin ! 👀" },
       { property: 'og:url', content: 'matteo.courqu.in' },
-      // { property: 'og:image', content: '[...]' }
+      { property: 'og:image', content: '/ogImage.png' },
       // Google
       { name: 'google-site-verification', content: '6n81QjyK4C02a8g9mMeuhdHqnAcjhHRxsGVdgXVGQ2Y' },
       { name: 'referrer', content: 'origine' },
       { name: 'description', content: "Étudiant à l'IIM, je ne cesse de monter en compétences ! 🎓  Venez faire un tour sur mon Portfolio. ✅  Mes réalisations sont à la fin ! 👀" },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       // Canonical
       { rel: 'canonical', href: 'https://matteo.courqu.in' }
     ]
