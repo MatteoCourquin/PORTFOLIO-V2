@@ -140,6 +140,10 @@
     justify-content: center;
     align-items: center;
 
+    @include screen-m {
+      bottom: 20px;
+    }
+
     @include screen-xs {
       padding: 0;
 
