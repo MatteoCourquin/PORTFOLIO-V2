@@ -6,7 +6,8 @@
     <div class="title-section">
       <h2>Carière</h2>
     </div>
-    <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false">
+    <section ref="sectionCareer" class="section career">
+    <!-- <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false"> -->
         <div class="container-card-career">
           <!-- Card Career -->
           <div class="card-career first-card-career">
@@ -178,7 +179,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: max-content;
-  cursor: none;
+  cursor: initial;
   transition: all 0.5s ease-in-out;
 
   @include screen-m {
