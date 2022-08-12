@@ -10,17 +10,17 @@
     </div>
     <div class="container-coding-since">
       <p>depuis</p>  
-      <p class="coding-since-items"><span class="number">{{ years }}</span>{{ isPlural(years, "an") }}</p>
+      <p class="coding-since-items"><span class="number"><span v-if="showZero(years)">0</span>{{ years }}</span>{{ isPlural(years, "an") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ months }}</span>mois</p>
+      <p class="coding-since-items"><span class="number"><span v-if="showZero(months)">0</span>{{ months }}</span>mois</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ days }}</span>{{ isPlural(days, "jour") }}</p>
+      <p class="coding-since-items"><span class="number"><span v-if="showZero(days)">0</span>{{ days }}</span>{{ isPlural(days, "jour") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ hours }}</span>{{ isPlural(hours, "heure") }}</p>
+      <p class="coding-since-items"><span class="number"><span v-if="showZero(hours)">0</span>{{ hours }}</span>{{ isPlural(hours, "heure") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
+      <p class="coding-since-items"><span class="number"><span v-if="showZero(minutes)">0</span>{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
       <div class="coding-since-lines"></div>
-      <p class="coding-since-items"><span class="number">{{ seconds }}</span>{{ isPlural(seconds, "seconde") }}</p>
+      <p class="coding-since-items"><span class="number"><span v-if="showZero(seconds)">0</span>{{ seconds }}</span>{{ isPlural(seconds, "seconde") }}</p>
     </div>
   </div>
 </template>
@@ -39,8 +39,8 @@
     };
   },
   methods: {
-    addZero(i) {
-      return i.toString().length < 2 ? i = '0' + i : i = i
+    showZero(i) {
+      return i.toString().length < 2 ? true : false
     },
     isPlural(number, word) {
       return number > 1 ? word + "s" : word
@@ -78,12 +78,12 @@
 
     let tmp = dateNow - codingSince;
 
-    this.years = this.addZero(Math.floor(tmp / 31536000000));
-    this.months = this.addZero(Math.floor((tmp % 31536000000) / 2628000000));
-    this.days = this.addZero(Math.floor((tmp % 2628000000) / 86400000));
-    this.hours = this.addZero(Math.floor((tmp % 86400000) / 3600000));
-    this.minutes = this.addZero(Math.floor((tmp % 3600000) / 60000));
-    this.seconds = this.addZero(Math.floor((tmp % 60000) / 1000));
+    this.years = Math.floor(tmp / 31536000000)
+    this.months = Math.floor((tmp % 31536000000) / 2628000000)
+    this.days = Math.floor((tmp % 2628000000) / 86400000)
+    this.hours = Math.floor((tmp % 86400000) / 3600000)
+    this.minutes = Math.floor((tmp % 3600000) / 60000)
+    this.seconds = Math.floor((tmp % 60000) / 1000)
 
     this.timeAdvance()
   },
@@ -167,8 +167,6 @@
         padding: 0;
       }
       .number{
-        width: clamp(55px, 7vw, 110px);
-        display: inline-block;
         margin-right: 5px;
       }
     }
