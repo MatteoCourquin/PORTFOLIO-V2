@@ -9,7 +9,7 @@
       <nuxt-img preload src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
-      <p>depuis</p>  
+      <p class="since">depuis :</p>
       <p class="coding-since-items"><span class="number"><span v-if="showZero(years)">0</span>{{ years }}</span>{{ isPlural(years, "an") }}</p>
       <div class="coding-since-lines"></div>
       <p class="coding-since-items"><span class="number"><span v-if="showZero(months)">0</span>{{ months }}</span>mois</p>
@@ -109,7 +109,7 @@
   @include screen-m {
     width: 100%;
   }
-  @include screen-s{
+  @include screen-xs{
     grid-template-columns: 1fr;
     padding: 220px clamp(20px, 4vw, 60px) calc( clamp(20px, 4vw, 60px) + clamp(20px, 3.5vw, 60px)) clamp(20px, 4vw, 60px);
   }
@@ -124,7 +124,7 @@
 
     border-bottom: 2px solid $color-black;
 
-    @include screen-s{
+    @include screen-xs{
       display: none;
     }
   }
@@ -140,7 +140,7 @@
     justify-content: center;
     align-items: center;
 
-    @include screen-s {
+    @include screen-xs {
       padding: 0;
 
       flex-direction: column;
@@ -148,13 +148,20 @@
 
       position: relative;
     }
+    .since{
+      position: absolute;
+      top: clamp(0px, 0.8vw, 60px);
+      @include screen-xs {
+        top: -30px;
+      }
+    }
     .coding-since-lines{
       width: 2px;
       height: clamp(20px, 3.5vw, 60px);
 
       background: $color-black;
 
-      @include screen-s {
+      @include screen-xs {
         display: none;
       }
     }
@@ -163,7 +170,7 @@
       display: flex;
       align-items: center;
 
-      @include screen-s {
+      @include screen-xs {
         padding: 0;
       }
       .number{
@@ -171,12 +178,12 @@
       }
     }
     .seconds{
-      @media screen and (max-width : 1400px) {
+      @media screen and (max-width : 1400px) and (min-width : 600px) {
         display: none;
       }
     }
     .minutes{
-      @media screen and (max-width : 1100px) and (min-width : 1000px) {
+      @media screen and (max-width : 750px) and (min-width : 600px) {
         display: none;
       }
     }
