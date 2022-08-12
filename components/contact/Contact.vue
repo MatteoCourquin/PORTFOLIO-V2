@@ -67,6 +67,7 @@ data() {
     input, textarea{
       outline: none;
       margin-bottom: 30px;
+      border-radius: 0;
       border: 2px solid $color-black;
       background: transparent;
       padding: 10px;

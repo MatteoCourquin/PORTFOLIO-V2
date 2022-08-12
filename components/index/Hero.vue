@@ -9,6 +9,7 @@
       <nuxt-img preload src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
+      <p>depuis</p>  
       <p class="coding-since-items"><span class="number">{{ years }}</span>{{ isPlural(years, "an") }}</p>
       <div class="coding-since-lines"></div>
       <p class="coding-since-items"><span class="number">{{ months }}</span>mois</p>
@@ -18,6 +19,8 @@
       <p class="coding-since-items"><span class="number">{{ hours }}</span>{{ isPlural(hours, "heure") }}</p>
       <div class="coding-since-lines"></div>
       <p class="coding-since-items"><span class="number">{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
+      <div class="coding-since-lines"></div>
+      <p class="coding-since-items"><span class="number">{{ seconds }}</span>{{ isPlural(seconds, "seconde") }}</p>
     </div>
   </div>
 </template>
@@ -37,14 +40,40 @@
   },
   methods: {
     addZero(i) {
-      return i.toString().length < 2 ? i = "0" + i : i = i
+      return i.toString().length < 2 ? i = '0' + i : i = i
     },
     isPlural(number, word) {
       return number > 1 ? word + "s" : word
     },
+    timeAdvance() {
+      setInterval(() => {
+        this.seconds++
+        if (this.seconds >= 60) {
+          this.seconds = 0
+          this.minutes++
+          if (this.minutes >= 60) {
+            this.minutes = 0
+            this.hours++
+            if (this.hours >= 24) {
+              this.hours = 0
+              this.days++
+              if (this.days >= 30) {
+                this.days = 0
+                this.months++
+                if (this.months >= 12) {
+                  this.months = 0
+                  this.years++
+                }
+              }
+            }
+          }
+        }
+      }, 1000)
+    }
   },
   mounted() {
-    let dateNow = new Date();
+    let dateNow = new Date()
+    // let dateNow = new Date('Wed Apr 15 2021 15:59:45 GMT+0100')
     let codingSince = new Date('Wed Apr 15 2020 16:00:00 GMT+0100')
 
     let tmp = dateNow - codingSince;
@@ -54,6 +83,9 @@
     this.days = this.addZero(Math.floor((tmp % 2628000000) / 86400000));
     this.hours = this.addZero(Math.floor((tmp % 86400000) / 3600000));
     this.minutes = this.addZero(Math.floor((tmp % 3600000) / 60000));
+    this.seconds = this.addZero(Math.floor((tmp % 60000) / 1000));
+
+    this.timeAdvance()
   },
 }
 
@@ -128,11 +160,15 @@
     }
     .coding-since-items{
       padding: 0 20px;
+      display: flex;
+      align-items: center;
 
       @include screen-s {
         padding: 0;
       }
       .number{
+        width: clamp(55px, 7vw, 110px);
+        display: inline-block;
         margin-right: 5px;
       }
     }
