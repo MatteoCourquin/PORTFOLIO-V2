@@ -8,7 +8,7 @@
       <!-- Card Project -->
       <div class="card-project">
         <div class="project-image">
-          <nuxt-img preload src="/images/projects/project01.png" />
+          <nuxt-img preload src="/images/projects/nlArchitecture.png" />
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -23,7 +23,7 @@
       <!-- Card Project -->
       <div class="card-project">
         <div class="project-image">
-          <nuxt-img preload src="/images/projects/project01.png" />
+          <nuxt-img preload src="/images/projects/nlArchitecture.png" />
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -38,7 +38,7 @@
       <!-- Card Project -->
       <div class="card-project">
         <div class="project-image">
-          <nuxt-img preload src="/images/projects/project01.png" />
+          <nuxt-img preload src="/images/projects/nlArchitecture.png" />
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">

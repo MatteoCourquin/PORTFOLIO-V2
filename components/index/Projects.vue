@@ -7,7 +7,7 @@
 
       <div class="card-project">
         <div class="project-image">
-          <nuxt-img preload src="/images/projects/project01.png" />
+          <nuxt-img preload src="/images/projects/nlArchitecture.png" />
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -21,14 +21,14 @@
 
       <div class="card-project">
         <div class="project-description">
-          <span class="number">02</span>
+          <span class="number">03</span>
           <div class="line"></div>
-          <h3>NL • Architecture</h3>
-          <p>Intégration de la maquette de Naila</p>
+          <h3>Semicolon</h3>
+          <p>Un projet d'école dont le but était de sensibiliser sur une problématique étudiante.</p>
           <a href="#" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
         <div class="project-image">
-          <nuxt-img preload src="/images/projects/project01.png" />
+          <nuxt-img preload src="/images/projects/semicolon.png" />
           <div class="rectangle-image"></div>
         </div>
       </div>

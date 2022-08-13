@@ -15,13 +15,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       // Open Graph
       { property: 'og:title', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
-      { property: 'og:description', content: "Étudiant à l'IIM, je ne cesse de monter en compétences ! 🎓  Venez faire un tour sur mon Portfolio. ✅  Mes réalisations sont à la fin ! 👀" },
+      { property: 'og:description', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
       { property: 'og:url', content: 'matteo.courqu.in' },
       { property: 'og:image', content: '/ogImage.png' },
       // Google
       { name: 'google-site-verification', content: '6n81QjyK4C02a8g9mMeuhdHqnAcjhHRxsGVdgXVGQ2Y' },
       { name: 'referrer', content: 'origine' },
-      { name: 'description', content: "Étudiant à l'IIM, je ne cesse de monter en compétences ! 🎓  Venez faire un tour sur mon Portfolio. ✅  Mes réalisations sont à la fin ! 👀" },
+      { name: 'description', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
