@@ -8,15 +8,18 @@
         <div class="line"></div>
         <div class="rectangle"></div>
 
-        <p>Qu’en est-il de mes compétences de développeur Web ? Mettre des superbes logos, c’est bien. Mais détaillons. Je maîtrise évidement HTML sans problème, CSS et JavaScript. J’ai quand même une particulière aisance en CSS. Tout les modules n’ont presque plus de secret pour moi. La logique de Grid, Flexbox, SASS, et j’en passe, est acquise. Mettez moi à l’épreuve, je saurais vous surprendre.</p>
+        <p>Je m'appelle Matteo, je suis developpeur frontend depuis {{ years }} ans et {{ months }} mois.</p>
 
-        <p>Parti pour être architecte, le design m’est presque inné. J’aime les belles choses bien réalisées. Ce qui fait de moi quelqu’un de pointilleux doté d’une certaine sensibilité esthétique. Ma vision graphique n’en sera que du plus.</p>
+        <p>Initialement parti pour être architecte, c'est lors du confinement que ma vie a pris un autre tournant.</p>
+        
+        <p>Tout a commencé depuis <a class="links" href="https://openclassrooms.com/" target="_blank">OpenClassrooms</a>. Le premier site vers lequel on se dirige lorsqu'on s'intéresse au web !</p>
 
-        <p>Je précise que je suis toujours en apprentissage à l’ IIM et que mes compétences grandissent de jour en jour. Je ne suis qu’au début de ma carrière.</p>
+        <p>J'ai ensuite approfondi a l’<a class="links" href="https://www.iim.fr/" target="_blank">IIM</a>, l'une des meilleures écoles du web.</p>
 
-        <p>Ma motivation est telle que mes études ne sont qu’une partie de plaisir.</p>
+        <p>Je suis quelqu'un de pointilleux, persévérant et mes études d'architecture m'ont apportées une certaine sensibilité esthétique et design. Ma vision graphique n’en sera que du plus.</p>
 
         <p>« Un code propre en vaut 10 »</p>
+
         <a href="documents/CV.pdf" target="_blank"><button class="button">Mon CV</button></a>
       </div>
       <div class="about-img">
@@ -29,11 +32,21 @@
 <script>
 
 export default {
-data() {
-  return {
+  data() {
+    return {
+      years: "",
+      months: "",
+    };
+  },
+  mounted() {
+    let dateNow = new Date()
+    let codingSince = new Date('Wed Apr 15 2020 16:00:00 GMT+0100')
 
-  };
-},
+    let tmp = dateNow - codingSince;
+
+    this.years = Math.floor(tmp / 31536000000)
+    this.months = Math.floor((tmp % 31536000000) / 2628000000)
+  }
 }
 
 </script>

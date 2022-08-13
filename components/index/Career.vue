@@ -25,26 +25,13 @@
             <span class="number">2023 - 2025</span>
             <div class="rectangle"></div>
           </div>
-          <!-- Card Career -->
-          <div class="card-career">
-            <h3>Master • IIM</h3>
-            <p>Développeur Étudiant</p>
-            <div class="line"></div>
-            <span class="number">2023 - 2025</span>
-            <div class="rectangle"></div>
-          </div>
-          <!-- Card Career -->
-          <div class="card-career">
-            <h3>Master • IIM</h3>
-            <p>Développeur Étudiant</p>
-            <div class="line"></div>
-            <span class="number">2023 - 2025</span>
-            <div class="rectangle"></div>
-          </div>
+
         </div>
+
         <div ref="timeLine" class="time-line">
           <div class="time-line-arrow"></div>
         </div>
+
         <div class="container-card-career">
           <!-- Card Career -->
           <div class="card-career">
@@ -56,20 +43,13 @@
           </div>
           <!-- Card Career -->
           <div class="card-career">
-            <h3>Fortuneo</h3>
-            <p>Développeur Angular</p>
+            <h3>À Suivre</h3>
+            <p>Développeur ...</p>
             <div class="line"></div>
-            <span class="number">2022 - En cours</span>
+            <span class="number"></span>
             <div class="rectangle"></div>
           </div>
-          <!-- Card Career -->
-          <div class="card-career">
-            <h3>Fortuneo</h3>
-            <p>Développeur Angular</p>
-            <div class="line"></div>
-            <span class="number">2022 - En cours</span>
-            <div class="rectangle"></div>
-          </div>
+
         </div>
     </section>
   </div>
@@ -189,7 +169,7 @@ export default {
     display: none;
   }
   .time-line{
-    width: 3000px;
+    width: calc(clamp(200px, 20vw, 600px) * 4);
     height: 2px;
     background: $color-black;
 
@@ -210,15 +190,14 @@ export default {
     flex-shrink: 0;
     display: flex;
     .card-career{
-      width: fit-content;
-      min-width: 400px;
+      width: clamp(fit-content, 20vw, 600px);
       height: 200px;
 
       display: flex;
       justify-content: center;
       flex-direction: column;
 
-      margin-left: 400px;
+      margin-left: clamp(150px, 20vw, 600px);
 
       padding-left: 20px;
 
