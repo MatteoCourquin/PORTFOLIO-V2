@@ -94,6 +94,10 @@ data() {
       @include screen-m {
         width: 100%;
       }
+
+      img{
+        @include filter-image;
+      }
     }
     .project-description{
       h3{

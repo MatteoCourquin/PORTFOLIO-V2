@@ -27,3 +27,8 @@
         background-image: url("~static/images/background-mobile.png");
     }
 }
+
+@mixin filter-image {
+    opacity: 50%;
+    filter: brightness(1.2);
+}
