@@ -5,16 +5,17 @@
     </div>
     <section class="section contact">
       <h1>Un Projet ?</h1>
+      <!-- <form method="post" v-on:submit.prevent="submitForm()"> -->
       <form method="post">
        
         <div>
-          <input type='text' id='name' name='name' placeholder='Prénom' required />
+          <input type='text' id='name' name='name' placeholder='Prénom' />
 
           <input type='text' id='last-name' name='last-name' placeholder='Nom' />
         </div>
 
         <div>
-          <input type='mail' id='mail' name='mail' placeholder='Mail' required />
+          <input type='mail' id='mail' name='mail' placeholder='Mail' />
 
           <input type='text' id='budget' name='budget' placeholder='Budget' />
         </div>
@@ -24,6 +25,7 @@
         <button type="submit" class="button">Envoyer</button>
        
       </form>
+        <button type="submit" class="button" @click="submitForm()">Get API</button>
     </section>
   </div>
 </template>
@@ -33,9 +35,56 @@
 export default {
   data() {
     return {
-
+      name: '',
+      lastName: '',
+      mail: '',
+      budget: '',
+      message: ''
     };
   },
+  methods: {
+    async submitForm() {
+
+      const axios = require('axios').default;
+
+      axios.get('https://api-portfolio-95q0zdah6-matteocourquin.vercel.app/users/', {
+        // headers: {
+        //   'Content-Type': 'application/json',
+        //   'Access-Control-Allow-Origin': '*'
+        // }
+      })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      // axios.get({
+      //   url: 'https://api-portfolio-95q0zdah6-matteocourquin.vercel.app/users',
+      //   contentType: 'application/json',
+      //   cache: false,
+      //   method: 'GET',
+      //   dataType: 'json',
+      //   data: JSON.stringify({
+      //       id: 'test',
+      //       command: 'echo michael'
+      //   }),
+      //   success: function(data) {
+      //       console.log(data);
+      //   }
+      // });
+
+      // axios.get('http://localhost:8080/users')
+      // axios.post('https://api-portfolio-95q0zdah6-matteocourquin.vercel.app/users', {
+      //   contentType: 'application/json',
+      //   dataType: 'json',
+      //   data: JSON.stringify()
+      // })
+      // .then(response => console.log(response))
+      // .catch(error => console.log(error))
+    }
+  }
 }
 
 </script>

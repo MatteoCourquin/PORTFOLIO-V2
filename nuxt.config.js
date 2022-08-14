@@ -20,7 +20,7 @@ export default {
       { property: 'og:image', content: '/ogImage.png' },
       // Google
       { name: 'google-site-verification', content: '6n81QjyK4C02a8g9mMeuhdHqnAcjhHRxsGVdgXVGQ2Y' },
-      { name: 'referrer', content: 'origine' },
+      { name: 'referrer', content: 'default' },
       { name: 'description', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
     ],
     link: [
