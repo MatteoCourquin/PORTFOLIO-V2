@@ -5,27 +5,25 @@
     </div>
     <section class="section contact">
       <h1>Un Projet ?</h1>
-      <!-- <form method="post" v-on:submit.prevent="submitForm()"> -->
-      <form method="post">
+      <form method="post" v-on:submit.prevent="submitForm()">
        
         <div>
-          <input type='text' id='name' name='name' placeholder='Prénom' />
+          <input type='text' ref='firstName' name='first-name' placeholder='Prénom' />
 
-          <input type='text' id='last-name' name='last-name' placeholder='Nom' />
+          <input type='text' ref='lastName' name='last-name' placeholder='Nom' />
         </div>
 
         <div>
-          <input type='mail' id='mail' name='mail' placeholder='Mail' />
+          <input type='mail' ref='mail' name='mail' placeholder='Mail' />
 
-          <input type='text' id='budget' name='budget' placeholder='Budget' />
+          <input type='text' ref='budget' name='budget' placeholder='Budget' />
         </div>
 
-        <textarea name="message" id="message" placeholder="Message" ></textarea>
+        <textarea name="message" ref="message" placeholder="Message" ></textarea>
 
         <button type="submit" class="button">Envoyer</button>
        
       </form>
-        <button type="submit" class="button" @click="submitForm()">Get API</button>
     </section>
   </div>
 </template>
@@ -35,54 +33,32 @@
 export default {
   data() {
     return {
-      name: '',
-      lastName: '',
-      mail: '',
-      budget: '',
-      message: ''
+      
     };
   },
   methods: {
     async submitForm() {
 
-      const axios = require('axios').default;
+      const axios = require('axios');
 
-      axios.get('https://api-portfolio-95q0zdah6-matteocourquin.vercel.app/users/', {
-        // headers: {
-        //   'Content-Type': 'application/json',
-        //   'Access-Control-Allow-Origin': '*'
-        // }
+      const data = JSON.stringify({
+        firstName: this.$refs.firstName.value,
+        lastName: this.$refs.lastName.value,
+        mail: this.$refs.mail.value,
+        budget: this.$refs.budget.value,
+        message: this.$refs.message.value
       })
-      .then(function (response) {
-        console.log(response.data);
+      const options = {
+          headers: {"content-type": "application/json"}
+      }
+
+      axios.post("https://api-portfolio-three.vercel.app/prospects", data, options)
+      .then(function (req) {
+        console.log(req);
       })
       .catch(function (error) {
         console.log(error);
       });
-
-      // axios.get({
-      //   url: 'https://api-portfolio-95q0zdah6-matteocourquin.vercel.app/users',
-      //   contentType: 'application/json',
-      //   cache: false,
-      //   method: 'GET',
-      //   dataType: 'json',
-      //   data: JSON.stringify({
-      //       id: 'test',
-      //       command: 'echo michael'
-      //   }),
-      //   success: function(data) {
-      //       console.log(data);
-      //   }
-      // });
-
-      // axios.get('http://localhost:8080/users')
-      // axios.post('https://api-portfolio-95q0zdah6-matteocourquin.vercel.app/users', {
-      //   contentType: 'application/json',
-      //   dataType: 'json',
-      //   data: JSON.stringify()
-      // })
-      // .then(response => console.log(response))
-      // .catch(error => console.log(error))
     }
   }
 }
