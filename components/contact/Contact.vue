@@ -5,7 +5,11 @@
     </div>
     <section class="section contact">
       <h1>Un Projet ?</h1>
-      <form method="post" v-on:submit.prevent="submitForm()">
+      <form method="post" ref="form" @submit.prevent="submitForm()">
+
+        <ul>
+          <li v-for="error in errors">{{ error }}</li>
+        </ul>
        
         <div>
           <input type='text' ref='firstName' name='first-name' placeholder='Prénom' />
@@ -16,7 +20,7 @@
         <div>
           <input type='mail' ref='mail' name='mail' placeholder='Mail' />
 
-          <input type='text' ref='budget' name='budget' placeholder='Budget' />
+          <input type='phone' ref='phone' name='phone' placeholder='Tel' />
         </div>
 
         <textarea name="message" ref="message" placeholder="Message" ></textarea>
@@ -33,32 +37,57 @@
 export default {
   data() {
     return {
-      
+      errors: [],
     };
   },
   methods: {
-    async submitForm() {
+    submitForm() {
 
-      const axios = require('axios');
+      let regexMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+      let regexPhone = /^0[1-9]([-. ]?[0-9]{2}){4}$/;
 
-      const data = JSON.stringify({
-        firstName: this.$refs.firstName.value,
-        lastName: this.$refs.lastName.value,
-        mail: this.$refs.mail.value,
-        budget: this.$refs.budget.value,
-        message: this.$refs.message.value
-      })
-      const options = {
-          headers: {"content-type": "application/json"}
+      this.errors = [];
+
+      if (!this.$refs.firstName.value && !this.$refs.lastName.value) {
+        this.errors.push('Prénom ou Nom requis');
+        console.log('prénom ou nom vide');
       }
 
-      axios.post("https://api-portfolio-three.vercel.app/post", data, options)
-      .then(function (req) {
-        console.log(req);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      if (!this.$refs.mail.value && !this.$refs.phone.value) {
+        this.errors.push('Mail ou Tel requis');
+        console.log('mail ou tel vide');
+      } else if (this.$refs.mail.value && !regexMail.test(this.$refs.mail.value)) {
+        this.errors.push('Mail invalide');
+        console.log('mail invalide');
+      } else if (this.$refs.phone.value && !regexPhone.test(this.$refs.phone.value)) {
+        this.errors.push('Tel invalide');
+        console.log('tel invalide');
+      }
+      if (this.errors.length === 0) {
+        
+        const axios = require('axios');
+
+        const data = JSON.stringify({
+          firstName: this.$refs.firstName.value,
+          lastName: this.$refs.lastName.value,
+          mail: this.$refs.mail.value,
+          phone: this.$refs.phone.value,
+          message: this.$refs.message.value
+        })
+        const options = {
+            headers: {"content-type": "application/json"}
+        }
+
+        axios.post("https://api-portfolio-three.vercel.app/post", data, options)
+        .then(function (req) {
+          console.log(req);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+        this.$router.push('/')
+      }
     }
   }
 }

@@ -95,6 +95,9 @@
   height: clamp(30px, 3vw, 70px);
   aspect-ratio: 10 / 1;
 
+  @media screen and (max-height : 600px) {
+    display: none;
+  }
   @include screen-m {
     display: none;
   }

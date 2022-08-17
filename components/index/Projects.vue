@@ -56,12 +56,17 @@ data() {
 .project{
   .card-project{
     display: grid;
+    align-items: center;
     gap: 2vw;
     margin-bottom: 100px;
     .project-description{
       display: flex;
       justify-content: center;
       flex-direction: column;
+
+      @include screen-m {
+        margin-top: 50px;
+      }
       .line{
         width: 20%;
         height: 2px;
@@ -73,10 +78,12 @@ data() {
       }
     }
     .project-image{
+      height: fit-content;
       display: flex;
       position: relative;
       img{
         width: 93%;
+        height: auto;
         z-index: 3;
         @include filter-image;
       }
@@ -93,6 +100,7 @@ data() {
     grid-template-columns: 3fr 2fr;
     @include screen-m {
       display: flex;
+      align-items: flex-start;
       flex-direction: column;
     }
     &:nth-child(even){
