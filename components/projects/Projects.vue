@@ -96,6 +96,7 @@ data() {
       }
 
       img{
+        opacity: 70%;
         @include filter-image;
       }
     }
