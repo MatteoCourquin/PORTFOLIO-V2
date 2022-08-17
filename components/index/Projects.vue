@@ -24,7 +24,7 @@
           <span class="number">02</span>
           <div class="line"></div>
           <h3>zLawyer</h3>
-          <p><a class="links" href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank">zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br>J'ai fait le projet en partenariat avec <a class="links" href="https://august1.dev" target="_blank">Augustin Briolon</a></p>
+          <p><a class="links" href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank">zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br>J'ai fait le projet en collaboration avec <a class="links" href="https://august1.dev" target="_blank">Augustin Briolon</a></p>
           <a href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
         <div class="project-image">
