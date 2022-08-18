@@ -7,6 +7,7 @@
       <h1>Un Projet ?</h1>
       <form method="post" ref="form" @submit.prevent="submitForm()">
        
+        <span class="error">{{ errors.notSend }}</span>
         <span class="error">{{ errors.names }}</span>
         <div>
           <input v-bind:class="[errors.names ? 'error-input' : '']" type='text' ref='firstName' name='first-name' placeholder='Prénom' />
@@ -43,6 +44,7 @@ export default {
         contacts: '',
         mail: '',
         phone: '',
+        notSend: ''
       },
     };
   },
@@ -91,15 +93,21 @@ export default {
             headers: {"content-type": "application/json"}
         }
 
+        const vm = this
+
         axios.post("https://api-portfolio-three.vercel.app/post", data, options)
+        // axios.post("http://localhost:8080/post", data, options)
         .then(function (req) {
-          console.log(req.status);
+          if (req.status == 200) {
+            vm.errors.notSend = ''
+            vm.$router.push('/')
+          } else {
+            vm.errors.notSend = 'Le formulaire n\'a pas été envoyé, veuillez réessayer.'
+          }
         })
         .catch(function (error) {
           console.log(error);
         });
-
-        // this.$router.push('/')
       }
     }
   }
