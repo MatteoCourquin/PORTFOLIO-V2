@@ -25,6 +25,14 @@
           <input v-bind:class="[errors.contacts || errors.phone ? 'error-input' : '']" type='phone' ref='phone' name='phone' placeholder='Tel' />
         </div>
 
+        <div class="budget-container">
+          <!-- <p>100 € / -</p> -->
+          <p>Budget :</p>
+          <input type='range' id='budget' name='budget' min="100" v-model="budgetValue" max="10000" step="100" ref="budget" @change="budgetValue = budgetValue" />
+          <p>{{ numberSpace(budgetValue) }} € <span v-if="budgetValue == 100">ou moins</span><span v-if="budgetValue == 10000">ou plus</span></p>
+          <!-- <p>10 000 € / +</p> -->
+        </div>
+
         <textarea name="message" ref="message" placeholder="Message" ></textarea>
 
       <button type="submit" class="button">Envoyer</button>
@@ -46,9 +54,13 @@ export default {
         phone: '',
         notSend: ''
       },
-    };
+      budgetValue: 8000,
+    }
   },
   methods: {
+    numberSpace(number) {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    },
     submitForm() {
 
       let regexMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
@@ -87,6 +99,7 @@ export default {
           lastName: this.$refs.lastName.value,
           mail: this.$refs.mail.value,
           phone: this.$refs.phone.value,
+          budget: this.$refs.budget.value,
           message: this.$refs.message.value
         })
         const options = {
@@ -96,7 +109,6 @@ export default {
         const vm = this
 
         axios.post("https://api-portfolio-three.vercel.app/post", data, options)
-        // axios.post("http://localhost:8080/post", data, options)
         .then(function (req) {
           if (req.status == 200) {
             vm.errors.notSend = ''
@@ -124,20 +136,27 @@ export default {
   text-align: center;
   color: red;
 }
+.budget-project{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
 
 .section.contact{
   h1{
     margin-bottom: 30px;
-
     @include screen-m {
       display: none;
     }
+  }
+  p{
+    font-family: $font-montserrat-semi-bold;
   }
   form{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     div{
       display: flex;
       align-items: center;
@@ -153,6 +172,12 @@ export default {
         gap: 0;
       }
     }
+    .budget-container{
+      justify-content: space-between;
+      p{
+        flex-shrink: 0;
+      }
+    }
     input, textarea{
       outline: none;
       border-radius: 0;
@@ -161,8 +186,12 @@ export default {
       padding: 10px;
       width: 100%;
       resize: none;
+      font-family: $font-montserrat-medium;
+      font-size: 16px;
       &::placeholder{
           color: lighten($color-black, 40%);
+          font-family: $font-montserrat-medium;
+          font-size: 16px;
       }
     }
     textarea{
@@ -179,5 +208,6 @@ export default {
     }
   }
 }
+
 
 </style>

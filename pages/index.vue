@@ -8,8 +8,7 @@
     <Projects/>
     <Career/>
     <About/>
-    <!-- <Section/>
-    <Elements/> -->
+    <Footer/>
   </div>
 </template>
 
@@ -19,9 +18,10 @@ import Hero from '../components/index/Hero.vue';
 import Projects from '../components/index/Projects.vue';
 import Career from '../components/index/Career.vue';
 import About from '../components/index/About.vue';
+import Footer from '../components/Footer.vue';
 
 export default {
-    components: { Header, Hero, Projects, Career, About }
+    components: { Header, Hero, Projects, Career, About, Footer }
 }
 
 </script>

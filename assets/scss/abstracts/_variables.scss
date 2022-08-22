@@ -11,8 +11,16 @@
   src: url("~static/fonts/Montserrat-Bold.ttf") format("truetype"),
 }
 @font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("~static/fonts/Montserrat-SemiBold.ttf") format("truetype"),
+}
+@font-face {
   font-family: "Montserrat-Regular";
   src: url("~static/fonts/Montserrat-Regular.ttf") format("truetype"),
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("~static/fonts/Montserrat-Medium.ttf") format("truetype"),
 }
 @font-face {
   font-family: "Montserrat-Light";
@@ -29,6 +37,8 @@ $color-purple: #BCB6FF;
 $font-montserrat-black: "Montserrat-Black", sans-serif;
 $font-montserrat-extra-bold: "Montserrat-ExtraBold", sans-serif;
 $font-montserrat-bold: "Montserrat-Bold", sans-serif;
+$font-montserrat-semi-bold: "Montserrat-SemiBold", sans-serif;
+$font-montserrat-medium: "Montserrat-Medium", sans-serif;
 $font-montserrat-regular: "Montserrat-Regular", sans-serif;
 $font-montserrat-light: "Montserrat-Light", sans-serif;
 
