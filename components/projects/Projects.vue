@@ -87,7 +87,7 @@ data() {
     .project-image{
       overflow: hidden;
       width: 88%;
-      max-height: 60vh;
+      max-height: 70vh;
 
       margin-bottom: 20px;
 
@@ -96,7 +96,6 @@ data() {
       }
 
       img{
-        opacity: 70%;
         @include filter-image;
       }
     }

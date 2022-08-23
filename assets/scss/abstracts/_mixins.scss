@@ -30,4 +30,5 @@
 
 @mixin filter-image {
     filter: brightness(1.2);
+    opacity: 60% !important;
 }

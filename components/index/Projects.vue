@@ -85,7 +85,6 @@ data() {
         width: 93%;
         height: auto;
         z-index: 3;
-        opacity: 70%;
         @include filter-image;
       }
       .rectangle-image{
