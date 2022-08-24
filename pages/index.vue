@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="container-background"></div>
     <div class="first-section-rectangle"></div>
     <div class="first-section-rectangle"></div>
     <div class="first-section-rectangle"></div>
@@ -38,7 +39,15 @@ body{
 
   overflow-x: hidden;
 
-  @include background-image;
+  .container-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    @include background-image;
+  }
 }
 
 </style>

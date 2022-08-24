@@ -19,6 +19,7 @@
 
 @mixin background-image {
     background-image: url("~static/images/background.png");
+    background-repeat: no-repeat;
     background-size: 100vw 100vh;
     background-attachment: fixed;
 }
