@@ -9,7 +9,7 @@
           <div class="lignes"></div>
         </div>
 
-        <div ref="triggerBurgerCircle" class="container-burger-circle">
+        <div class="container-burger-circle">
           <nuxt-img preload src="/images/logos/burger-circle.svg" ref="burgerCircle" class="burger-circle" />
         </div>
 
@@ -46,7 +46,9 @@ export default {
     };
   },
   methods: {
-
+  },
+  mounted() {
+    this.isActive = false;
   },
 };
 </script>
@@ -95,7 +97,9 @@ header{
   }
   .header-nav{
     li{
-      font-family: $font-montserrat-black;
+      .links{
+        font-family: $font-montserrat-black !important;
+      }
       font-size: clamp(40px, 5vw, 80px);
       line-height: clamp(45px, 5.5vw, 100px);
       text-align: center;
