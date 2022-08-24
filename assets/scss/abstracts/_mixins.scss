@@ -19,13 +19,8 @@
 
 @mixin background-image {
     background-image: url("~static/images/background.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-attachment: fixed;
-    @include screen-s {
-        background-image: url("~static/images/background-mobile.png");
-    }
 }
 
 @mixin filter-image {
