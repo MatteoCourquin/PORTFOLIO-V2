@@ -122,8 +122,8 @@ header.active{
   z-index: 9999;
 
   @include screen-m {
-    width: 150px;
-    height: 120px;
+    width: fit-content;
+    height: fit-content;
     border: none;
   }
   .container-burger{
@@ -141,9 +141,14 @@ header.active{
     align-items: center;
 
     @include screen-m {
-      justify-content: flex-end;
+      width: fit-content;
+      padding: 30px;
       aspect-ratio: initial;
-      padding: 50px;
+
+      justify-content: flex-end;
+
+      backdrop-filter: blur( 0 );
+      -webkit-backdrop-filter: blur( 0 );
     }
     
   }
