@@ -35,7 +35,7 @@
 .container-footer{
   width: calc(100% - 220px);
 
-  padding: 50px clamp(20px, 4vw, 60px);
+  padding: 20px;
 
   @include screen-m {
     width: 100%;
@@ -47,8 +47,15 @@ footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width : 450px) {
+    align-items: flex-end;
+  }
   .social-medias{
     display: flex;
+    @media screen and (max-width : 450px) {
+      flex-direction: column;
+    }
     svg{
       width: 70px;
       height: auto;
