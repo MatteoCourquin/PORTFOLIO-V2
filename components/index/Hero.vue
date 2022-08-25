@@ -124,6 +124,7 @@ import { gsap } from "gsap";
     width: clamp(200px, 30vw, 500px);
 
     border-bottom: 2px solid $color-black;
+    box-shadow: 0 9px 10px -10px $color-black;
 
     @include screen-xs{
       display: none;
