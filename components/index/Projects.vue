@@ -7,7 +7,9 @@
 
       <div class="card-project">
         <div class="project-image">
-          <nuxt-img preload src="/images/projects/nlArchitecture.png" />
+          <nuxt-link to="projects/#project1" class="links-img">
+            <nuxt-img preload src="/images/projects/nlArchitecture.png" />
+          </nuxt-link>
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -24,16 +26,18 @@
           <span class="number">02</span>
           <div class="line"></div>
           <h3>zLawyer</h3>
-          <p><a class="links" href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank">zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br>J'ai fait le projet en collaboration avec <a class="links" href="https://august1.dev" target="_blank">Augustin Briolon</a></p>
+          <p><a class="links" href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank">zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacté pour la refonte de leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class="links" href="https://august1.dev" target="_blank">Augustin Briolon</a></p>
           <a href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
         <div class="project-image">
-          <nuxt-img preload src="/images/projects/zLawyer.png" />
+          <nuxt-link to="projects/#project2" class="links-img">
+            <nuxt-img preload src="/images/projects/zLawyer.png" />
+          </nuxt-link>
           <div class="rectangle-image"></div>
         </div>
       </div>
 
-      <nuxt-link to="/projects"><button class="button all-project">Tout les projets</button></nuxt-link>
+      <nuxt-link to="/projects"><button class="button all-project">Tous les projets</button></nuxt-link>
 
     </section>
   </div>
@@ -85,7 +89,6 @@ data() {
         width: 93%;
         height: auto;
         z-index: 3;
-        @include filter-image;
       }
       .rectangle-image{
         position: absolute;

@@ -1,8 +1,8 @@
 <template>
   <div class="hero">
     <div class="hero-description">
-      <h1>Developpeur <br>Frontend</h1>
-      <p>Développeur de passion, mon travail est un plaisir. Selon moi, c'est primordial pour faire des projets de qualités ! <br>
+      <h1>Developpeur <br>web</h1>
+      <p>Développeur de passion, mon travail n'est qu'une partie de plaisir. Selon moi, c'est primordial pour faire des projets soignés et de qualité ! <br><br>
       Votre projet sera peut-être le prochain ?</p>
       <nuxt-link to="/contact"><button class="button">Contact</button></nuxt-link>
     </div>

@@ -7,23 +7,24 @@
       <div class="about-description">
         <div class="line"></div>
         <div class="rectangle"></div>
+        <nuxt-img preload src="/images/logos/quote.svg" class="quote" />
 
         <p>Je m'appelle Matteo, je suis developpeur frontend depuis {{ years }} ans et {{ months }} mois.</p>
 
         <p>Initialement parti pour être architecte, c'est lors du confinement que ma vie a pris un autre tournant.</p>
         
-        <p>Tout a commencé depuis <a class="links" href="https://openclassrooms.com/" target="_blank">OpenClassrooms</a>. Le premier site vers lequel on se dirige lorsqu'on s'intéresse au web !</p>
+        <p>Tout a commencé depuis <a class="links" href="https://openclassrooms.com/" target="_blank">OpenClassrooms</a>. Le premier site vers lequel on se dirige lorsque l'on s'intéresse au web !</p>
 
-        <p>J'ai ensuite approfondi a l’<a class="links" href="https://www.iim.fr/" target="_blank">IIM</a>, l'une des meilleures écoles du web.</p>
+        <p>J'ai ensuite approfondi à l’<a class="links" href="https://www.iim.fr/" target="_blank">IIM</a>, l'une des meilleures école du web.</p>
 
-        <p>Je suis quelqu'un de pointilleux, persévérant et mes études d'architecture m'ont apportées une certaine sensibilité esthétique et design. Ma vision graphique n’en sera que du plus.</p>
+        <p>Je suis quelqu'un de pointilleux, persévérant et mes études d'architecture m'ont apporté une certaine sensibilité esthétique et design. Ma vision graphique n’en sera que du plus.</p>
 
         <p>« Un code propre en vaut 10 »</p>
 
         <a href="documents/CV.pdf" target="_blank"><button class="button">Mon CV</button></a>
       </div>
-      <div class="about-img">
-        <nuxt-img src="/images/about/CV.png"/>
+      <div class="about-cv">
+        <a href="documents/CV.pdf" target="_blank"><nuxt-img src="/images/about/CV.png"/></a>
       </div>
     </section>
   </div>
@@ -64,6 +65,15 @@ export default {
     padding: 50px 50px 50px 0;
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .quote{
+      width: clamp(70px, 6vw, 90px);
+      margin-bottom: 20px;
+    }
+
     @include screen-m {
       padding: 0;
     }
@@ -93,7 +103,7 @@ export default {
       }
     }
   }
-  .about-img{
+  .about-cv{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,6 +111,7 @@ export default {
       display: none;
     }
     img{
+      cursor: pointer;
       padding-left: 50px;
       width: clamp(20px, 100%, 600px);
   

@@ -25,6 +25,7 @@
 }
 
 @mixin filter-image {
-    filter: brightness(1.2);
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
     opacity: .6;
 }

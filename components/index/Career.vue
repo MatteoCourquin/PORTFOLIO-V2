@@ -11,7 +11,7 @@
         <div class="container-card-career">
           <!-- Card Career -->
           <div class="card-career first-card-career">
-            <h3>Bachelor • IIM</h3>
+            <h4>Bachelor • IIM</h4>
             <p>Développeur Étudiant</p>
             <div class="line"></div>
             <span class="number">2020 - 2023</span>
@@ -19,7 +19,7 @@
           </div>
           <!-- Card Career -->
           <div class="card-career">
-            <h3>Master • IIM</h3>
+            <h4>Master • IIM</h4>
             <p>Développeur Étudiant</p>
             <div class="line"></div>
             <span class="number">2023 - 2025</span>
@@ -35,7 +35,7 @@
         <div class="container-card-career">
           <!-- Card Career -->
           <div class="card-career">
-            <h3>Fortuneo</h3>
+            <h4>Fortuneo</h4>
             <p>Développeur Angular</p>
             <div class="line"></div>
             <span class="number">2022 - En cours</span>
@@ -43,7 +43,7 @@
           </div>
           <!-- Card Career -->
           <div class="card-career">
-            <h3>À Suivre</h3>
+            <h4>À Suivre</h4>
             <p>Développeur ...</p>
             <div class="line"></div>
             <span class="number"></span>
