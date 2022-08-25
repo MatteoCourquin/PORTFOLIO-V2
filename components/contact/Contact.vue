@@ -10,9 +10,9 @@
         <span class="error">{{ errors.notSend }}</span>
         <span class="error">{{ errors.names }}</span>
         <div>
-          <input v-bind:class="[errors.names ? 'error-input' : '']" type='text' ref='firstName' name='first-name' placeholder='Prénom' />
+          <input v-bind:class="[errors.names ? 'error-input' : '']" type='text' ref='firstName' name='first-name' placeholder='Prénom' @keyup="validNames()"/>
           <span>ou</span>
-          <input v-bind:class="[errors.names ? 'error-input' : '']" type='text' ref='lastName' name='last-name' placeholder='Nom' />
+          <input v-bind:class="[errors.names ? 'error-input' : '']" type='text' ref='lastName' name='last-name' placeholder='Nom' @keyup="validNames()"/>
         </div>
 
         <span class="error">{{ errors.contacts }}</span>
@@ -20,9 +20,9 @@
         <span class="error">{{ errors.phone }}</span>
 
         <div>
-          <input v-bind:class="[errors.contacts || errors.mail ? 'error-input' : '']" type='mail' ref='mail' name='mail' placeholder='Mail' />
+          <input v-bind:class="[errors.contacts || errors.mail ? 'error-input' : '']" type='mail' ref='mail' name='mail' placeholder='Mail' @change="validContacts()"/>
           <span>ou</span>
-          <input v-bind:class="[errors.contacts || errors.phone ? 'error-input' : '']" type='phone' ref='phone' name='phone' placeholder='Tel' />
+          <input v-bind:class="[errors.contacts || errors.phone ? 'error-input' : '']" type='phone' ref='phone' name='phone' placeholder='Tel' @change="validContacts()"/>
         </div>
 
         <div class="budget-container">
@@ -61,22 +61,23 @@ export default {
     numberSpace(number) {
       return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     },
-    submitForm() {
-
-      let regexMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
-      let regexPhone = /^0[1-9]([-. ]?[0-9]{2}){4}$/;
-
+    validNames() {
       if (!this.$refs.firstName.value && !this.$refs.lastName.value) {
         this.errors.names = 'Veuillez saisir au moins un prénom ou un nom';
       } else if (this.$refs.firstName.value || this.$refs.lastName.value) {
         this.errors.names = '';
       }
-
+    },
+    validContacts() {
       if (!this.$refs.mail.value && !this.$refs.phone.value) {
         this.errors.contacts = 'Veuillez saisir au moins un mail ou un numéro de téléphone';
       } else if (this.$refs.mail.value || this.$refs.phone.value) {
         this.errors.contacts = '';
       }
+
+      let regexMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+      let regexPhone = /^0[1-9]([-. ]?[0-9]{2}){4}$/;
+
       if (this.$refs.mail.value && !regexMail.test(this.$refs.mail.value)) {
         this.errors.mail = 'Veuillez entrer un e-mail valide';
       } else {
@@ -87,10 +88,21 @@ export default {
       } else {
         this.errors.phone = '';
       }
+    },
+    isFormValid() {
+
+      this.validNames()
+      this.validContacts()
 
       if (!this.errors.names && !this.errors.contacts && !this.errors.mail && !this.errors.phone) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    submitForm() {
 
-        console.log('formulaire valide')
+      if (this.isFormValid() == true) {
         
         const axios = require('axios');
 
@@ -120,6 +132,9 @@ export default {
         .catch(function (error) {
           console.log(error);
         });
+
+      } else {
+        console.log('formulaire invalide');
       }
     }
   }
