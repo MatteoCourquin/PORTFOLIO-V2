@@ -92,6 +92,8 @@ data() {
 
       margin-bottom: 20px;
 
+      padding: 20px;
+
       @include screen-m {
         width: 100%;
       }

@@ -95,6 +95,7 @@ data() {
       grid-row: 1 / 2;
 
       img{
+        padding: 10px;
         width: 93%;
         height: auto;
         z-index: 3;
