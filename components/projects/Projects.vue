@@ -8,7 +8,7 @@
       <!-- Card Project -->
       <div v-for="(project, i) in projects" :id="i+1" class="card-project">
         <div class="project-image">
-          <nuxt-img class="links-img" :src="project.image" />
+          <nuxt-img format="png" class="links-img" :src="project.image" quality="10" loading="lazy"/>
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -89,9 +89,6 @@ data() {
       overflow: hidden;
       width: 88%;
       max-height: 70vh;
-
-      // border-bottom: 2px solid $color-black;
-      // box-shadow: 0 9px 10px -14px $color-black;
 
       margin-bottom: 20px;
 
