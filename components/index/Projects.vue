@@ -117,9 +117,6 @@ data() {
     }
     &:nth-child(even){
       grid-template-columns: 2fr 3fr;
-      @include screen-m {
-        flex-direction: column-reverse;
-      }
     }
   }
   .all-project{

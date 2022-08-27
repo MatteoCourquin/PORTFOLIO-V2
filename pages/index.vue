@@ -7,8 +7,8 @@
     <Hero/>
     <Projects/>
     <Career/>
-    <!-- <About/>
-    <Footer/> -->
+    <About/>
+    <Footer/>
   </div>
 </template>
 

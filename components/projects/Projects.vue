@@ -90,8 +90,8 @@ data() {
       width: 88%;
       max-height: 70vh;
 
-      border-bottom: 2px solid $color-black;
-      box-shadow: 0 9px 10px -14px $color-black;
+      // border-bottom: 2px solid $color-black;
+      // box-shadow: 0 9px 10px -14px $color-black;
 
       margin-bottom: 20px;
 

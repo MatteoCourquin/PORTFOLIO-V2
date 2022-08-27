@@ -158,7 +158,6 @@ export default {
   position: relative;
 
   .time-line{
-    z-index: 999; 
     width: calc(clamp(150px, 20vw, 600px) * 7);
     height: 2px;
     background: $color-black;

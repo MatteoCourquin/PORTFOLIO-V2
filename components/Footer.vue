@@ -40,6 +40,9 @@
   @include screen-m {
     width: 100%;
   }
+  @include screen-xs{
+    padding: 0 20px 100px 20px;
+  }
 }
 footer{
   width: 100%;
