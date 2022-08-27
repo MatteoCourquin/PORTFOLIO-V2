@@ -124,13 +124,13 @@ export default {
         .then(function (req) {
           if (req.status == 200) {
             vm.errors.notSend = ''
-            vm.$router.push('/')
+            vm.$router.push('/remerciement-contact')
           } else {
             vm.errors.notSend = 'Le formulaire n\'a pas été envoyé, veuillez réessayer.'
           }
         })
         .catch(function (error) {
-          console.log(error);
+          vm.errors.notSend = 'Le formulaire n\'a pas été envoyé, veuillez réessayer.'
         });
 
       } else {
