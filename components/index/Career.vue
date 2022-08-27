@@ -8,49 +8,20 @@
     </div>
     <section ref="sectionCareer" class="section career">
     <!-- <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false"> -->
-        <div class="container-card-career">
-          <!-- Card Career -->
-          <div class="card-career first-card-career">
-            <h4>Bachelor • IIM</h4>
-            <p>Développeur Étudiant</p>
-            <div class="line"></div>
-            <span class="number">2020 - 2023</span>
-            <div class="rectangle"></div>
-          </div>
-          <!-- Card Career -->
-          <div class="card-career">
-            <h4>Master • IIM</h4>
-            <p>Développeur Étudiant</p>
-            <div class="line"></div>
-            <span class="number">2023 - 2025</span>
-            <div class="rectangle"></div>
-          </div>
 
+        <!-- Card Career -->
+        <div v-for="(careerItem) in careerItems" class="card-career">
+          <h4>{{ careerItem.title }}</h4>
+          <p>{{ careerItem.description }}</p>
+          <div class="line"></div>
+          <span class="number">{{ careerItem.years }}</span>
+          <div class="rectangle"></div>
         </div>
 
         <div ref="timeLine" class="time-line">
           <div class="time-line-arrow"></div>
         </div>
 
-        <div class="container-card-career">
-          <!-- Card Career -->
-          <div class="card-career">
-            <h4>Fortuneo</h4>
-            <p>Développeur Angular</p>
-            <div class="line"></div>
-            <span class="number">2022 - En cours</span>
-            <div class="rectangle"></div>
-          </div>
-          <!-- Card Career -->
-          <div class="card-career">
-            <h4>À Suivre</h4>
-            <p>Développeur ...</p>
-            <div class="line"></div>
-            <span class="number"></span>
-            <div class="rectangle"></div>
-          </div>
-
-        </div>
     </section>
   </div>
 </template>
@@ -62,8 +33,30 @@ export default {
   data() {
     return {
       cursorActive: false,
-
       padding: 0,
+
+      careerItems: [
+        {
+          title: 'Bachelor • IIM',
+          description: 'Développeur Web',
+          years: '2020 - 2023',
+        },
+        {
+          title: 'Fortuneo',
+          description: 'Développeur Angular',
+          years: '2022 - En Cours',
+        },
+        {
+          title: 'Mastère • IIM',
+          description: 'Chef de projet digital',
+          years: '2023 - 2025',
+        },
+        {
+          title: 'À Suivre',
+          description: 'Développeur',
+          years: '',
+        },
+      ]
     };
   },
   methods: {
@@ -157,23 +150,19 @@ export default {
 .career{
   overflow: scroll !important;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   width: max-content;
   cursor: initial;
   transition: all 0.5s ease-in-out;
+  height: 500px;
+  position: relative;
 
-  @include screen-m {
-    justify-content: center;
-  }
-  &::-webkit-scrollbar {
-    display: none;
-  }
   .time-line{
-    width: calc(clamp(200px, 20vw, 600px) * 4);
+    z-index: 999; 
+    width: calc(clamp(150px, 20vw, 600px) * 7);
     height: 2px;
     background: $color-black;
-
-    position: relative;
+    position: absolute;
     .time-line-arrow{
       width: 30px;
       height: 30px;
@@ -185,45 +174,58 @@ export default {
       border-right: 2px solid $color-black;
     }
   }
-  .container-card-career{
-    width: max-content;
-    flex-shrink: 0;
-    display: flex;
-    .card-career{
-      width: clamp(fit-content, 20vw, 600px);
-      height: 200px;
 
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-
-      margin-left: clamp(150px, 20vw, 600px);
-
-      padding-left: 20px;
-
-      position: relative;
-      .rectangle{
-        width: 80px;
-        height: 100%;
-        background: $color-white;
-
-        left: 0;
-        position: absolute;
-        z-index: -2;
-      }
-      .line{
-        width: 90px;
-        height: 2px;
-        background: $color-black;
-        margin: 10px 0;
-      }
-      .number{
-        font-size: clamp(20px, 2vw, 40px);
-      }
-    }
+  @include screen-m {
+    justify-content: center;
   }
-  .card-career.first-card-career{
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card-career{
+  width: clamp(fit-content, 20vw, 600px);
+  height: 250px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-left: 10vw;
+
+  padding-left: 20px;
+
+  position: relative;
+
+  &:first-child{
     margin-left: 0;
+  }
+  &:nth-child(even){
+    transform: translateY(-50%);
+  }
+  &:nth-child(odd){
+    transform: translateY(50%);
+  }
+  h4, .number{
+    white-space: nowrap
+  }
+  .rectangle{
+    width: 80px;
+    height: 100%;
+    background: $color-white;
+
+    left: 0;
+    position: absolute;
+    z-index: -2;
+  }
+  .line{
+    width: 90px;
+    height: 2px;
+    background: $color-black;
+    margin: 10px 0;
+  }
+  .number{
+    font-size: clamp(20px, 2vw, 40px);
   }
 }
 

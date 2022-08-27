@@ -5,79 +5,18 @@
     </div>
     <section class="section projects">
 
-
       <!-- Card Project -->
-      <div id="project1" class="card-project">
+      <div v-for="(project, i) in projects" :id="i+1" class="card-project">
         <div class="project-image">
-          <nuxt-img class="links-img" preload src="/images/projects/zLawyer.png" />
+          <nuxt-img class="links-img" preload :src="project.image" />
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
-          <span class="number">01</span>
+          <span class="number"><span v-if="i < 9">0</span>{{ i + 1 }}</span>
           <div class="line"></div>
-          <p><a class="links" href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank">zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class="links" href="https://august1.dev" target="_blank">Augustin Briolon</a></p>
-          <h3>zLawyer</h3>
-          <a href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
-        </div>
-      </div>
-      
-      <!-- Card Project -->
-      <div id="project2" class="card-project">
-        <div class="project-image">
-          <nuxt-img class="links-img" preload src="/images/projects/nlArchitecture.png" />
-          <div class="rectangle-image"></div>
-        </div>
-        <div class="project-description">
-          <span class="number">02</span>
-          <div class="line"></div>
-          <p>Intégration de la maquette de <a class="links" href="https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page" target="_blank">Nadya Lazurenko</a></p>
-          <h3>NL • Architecture</h3>
-          <a href="https://nl-architecture.courqu.in/" target="_blank" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
-        </div>
-      </div>
-
-      <!-- Card Project -->
-      <div id="project3" class="card-project">
-        <div class="project-image">
-          <nuxt-img class="links-img" preload src="/images/projects/semicolon.png" />
-          <div class="rectangle-image"></div>
-        </div>
-        <div class="project-description">
-          <span class="number">03</span>
-          <div class="line"></div>
-          <p>Un projet d'études voué a sensibiliser sur les problématiques étudiantes.</p>
-          <h3>Semicolon</h3>
-          <a href="https://semicolon.vercel.app" target="_blank" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
-        </div>
-      </div>
-
-      <!-- Card Project -->
-      <div id="project4" class="card-project">
-        <div class="project-image">
-          <nuxt-img class="links-img" preload src="/images/projects/villaSavoye.png" />
-          <div class="rectangle-image"></div>
-        </div>
-        <div class="project-description">
-          <span class="number">04</span>
-          <div class="line"></div>
-          <p>Un de mes projets de fin d'année préparatoire. Le thème du site était "un monument ou un lieu culte en île-de-france". <br>J'ai choisi <a href="https://www.villa-savoye.fr/" target="_blank" class="links">la Villa Savoye</a> en raison de ma passion pour l'architecture et <a href="http://www.fondationlecorbusier.fr/" target="_blank" class="links">le Corbusier</a>.</p>
-          <h3>La Villa Savoye</h3>
-          <a href="https://lavillasavoye-matteocourquin.herokuapp.com/index.php" target="_blank" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
-        </div>
-      </div>
-
-      <!-- Card Project -->
-      <div id="project5" class="card-project">
-        <div class="project-image">
-          <nuxt-img class="links-img" preload src="/images/projects/laDefense.png" />
-          <div class="rectangle-image"></div>
-        </div>
-        <div class="project-description">
-          <span class="number">05</span>
-          <div class="line"></div>
-          <p>Un projet d'études dont le but était de réaliser une maquette UI. J'ai décidé de l'intégrer pour m'amuser !</p>
-          <h3>La défense</h3>
-          <a href="https://la-defense.courqu.in/index.html" target="_blank" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
+          <p v-html="project.description"></p>
+          <h3>{{ project.title }}</h3>
+          <a :href="project.link" target="_blank" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
       </div>
 
@@ -90,7 +29,38 @@
 export default {
 data() {
   return {
-
+    projects: [
+      {
+        title: 'zLawyer',
+        description: "<a class='links' href='https://www.zlawyer.fr/logiciel-avocats/' target='_blank'>zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class='links' href='https://august1.dev' target='_blank'>Augustin Briolon</a>",
+        image: '/images/projects/zLawyer.png',
+        link: 'https://www.zlawyer.fr/logiciel-avocats/'
+      },
+      {
+        title: 'NL • Architecture',
+        description: "Intégration de la maquette de <a class='links' href='https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page' target='_blank'>Nadya Lazurenko</a>",
+        image: '/images/projects/nlArchitecture.png',
+        link: 'https://nl-architecture.courqu.in/'
+      },
+      {
+        title: 'Semicolon',
+        description: "Un projet d'études voué a sensibiliser sur les problématiques étudiantes.",
+        image: '/images/projects/semicolon.png',
+        link: 'https://semicolon.vercel.app'
+      },
+      {
+        title: 'La Villa Savoye',
+        description: "Un de mes projets de fin d'année préparatoire. Le thème du site était 'un monument ou un lieu culte en île-de-france'. <br>J'ai choisi <a href='https://www.villa-savoye.fr/' target='_blank' class='links'>la Villa Savoye</a> en raison de ma passion pour l'architecture et <a href='http://www.fondationlecorbusier.fr/' target='_blank' class='links'>le Corbusier</a>.",
+        image: '/images/projects/villaSavoye.png',
+        link: 'https://lavillasavoye-matteocourquin.herokuapp.com/index.php'
+      },
+      {
+        title: 'La défense',
+        description: "Un projet d'études dont le but était de réaliser une maquette UI. J'ai décidé de l'intégrer pour m'amuser !",
+        image: '/images/projects/laDefense.png',
+        link: 'https://la-defense.courqu.in/index.html'
+      },
+    ]
   };
 },
 }
@@ -119,6 +89,9 @@ data() {
       overflow: hidden;
       width: 88%;
       max-height: 70vh;
+
+      border-bottom: 2px solid $color-black;
+      box-shadow: 0 9px 10px -14px $color-black;
 
       margin-bottom: 20px;
 

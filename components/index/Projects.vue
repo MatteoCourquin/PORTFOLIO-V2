@@ -5,35 +5,19 @@
     </div>
     <section class="section project">
 
-      <div class="card-project">
+      <div v-for="(project, i) in projects" class="card-project">
         <div class="project-image">
-          <nuxt-link to="projects/#project1" class="links-img">
-            <nuxt-img preload src="/images/projects/nlArchitecture.png" />
-          </nuxt-link>
+          <a :href="'projects/#' + (i + 1)" class="links-img">
+            <nuxt-img preload :src="project.image" />
+          </a>
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
-          <span class="number">01</span>
+          <span class="number"><span v-if="i < 9">0</span>{{ i + 1 }}</span>
           <div class="line"></div>
-          <h3>NL • Architecture</h3>
-          <p>Intégration de la maquette de <a class="links" href="https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page" target="_blank">Nadya Lazurenko</a></p>
-          <a href="https://nl-architecture.courqu.in/" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
-        </div>
-      </div>
-
-      <div class="card-project">
-        <div class="project-description">
-          <span class="number">02</span>
-          <div class="line"></div>
-          <h3>zLawyer</h3>
-          <p><a class="links" href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank">zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacté pour la refonte de leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class="links" href="https://august1.dev" target="_blank">Augustin Briolon</a></p>
-          <a href="https://www.zlawyer.fr/logiciel-avocats/" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
-        </div>
-        <div class="project-image">
-          <nuxt-link to="projects/#project2" class="links-img">
-            <nuxt-img preload src="/images/projects/zLawyer.png" />
-          </nuxt-link>
-          <div class="rectangle-image"></div>
+          <h3>{{ project.title }}</h3>
+          <p v-html="project.description"></p>
+          <a :href="project.link" target="_blank" class="links">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
       </div>
 
@@ -48,7 +32,20 @@
 export default {
 data() {
   return {
-
+    projects: [
+       {
+        title: 'zLawyer',
+        description: "<a class='links' href='https://www.zlawyer.fr/logiciel-avocats/' target='_blank'>zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class='links' href='https://august1.dev' target='_blank'>Augustin Briolon</a>",
+        image: '/images/projects/zLawyer.png',
+        link: 'https://www.zlawyer.fr/logiciel-avocats/'
+      },
+      {
+        title: 'NL • Architecture',
+        description: "Intégration de la maquette de <a class='links' href='https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page' target='_blank'>Nadya Lazurenko</a>",
+        image: '/images/projects/nlArchitecture.png',
+        link: 'https://nl-architecture.courqu.in/'
+      },
+    ]
   };
 },
 }
@@ -63,10 +60,20 @@ data() {
     align-items: center;
     gap: 2vw;
     margin-bottom: 100px;
+
+    &:nth-child(even) {
+      .project-description{
+        grid-column: 1 / 2;
+      }
+      .project-image{
+        grid-column: 2 / 3;
+      }
+    }
     .project-description{
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      grid-row: 1 / 2;
 
       @include screen-m {
         margin-top: 50px;
@@ -85,6 +92,8 @@ data() {
       height: fit-content;
       display: flex;
       position: relative;
+      grid-row: 1 / 2;
+
       img{
         width: 93%;
         height: auto;
