@@ -20,7 +20,7 @@
     <header v-bind:class="[isActive ? 'active' : '']">
       <ul class="header-nav">
         <li @click="isActive = !isActive"><nuxt-link class="links" to="/">home</nuxt-link></li>
-        <li @click="isActive = !isActive"><nuxt-link class="links" to="/projects">projets</nuxt-link></li>
+        <li @click="isActive = !isActive"><nuxt-link class="links" to="/projets">projets</nuxt-link></li>
         <li @click="isActive = !isActive"><nuxt-link class="links" to="/contact">contact</nuxt-link></li>
       </ul>
       <Footer class="footer" />
