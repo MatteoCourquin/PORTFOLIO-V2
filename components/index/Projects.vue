@@ -8,7 +8,7 @@
       <div v-for="(project, i) in projects" class="card-project">
         <div class="project-image">
           <a :href="'projects/#' + (i + 1)" class="links-img">
-            <nuxt-img preload :src="project.image" />
+            <nuxt-img :src="project.image" />
           </a>
           <div class="rectangle-image"></div>
         </div>
