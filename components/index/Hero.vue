@@ -1,33 +1,34 @@
 <template>
   <div class="hero">
     <div class="hero-description">
-      <h1>Developpeur <br>web</h1>
-      <p>Développeur de passion, mon travail n'est qu'une partie de plaisir. Selon moi, c'est primordial pour faire des projets soignés et de qualité ! <br><br>
+      <h1 class="anim-hero">Developpeur <br>web</h1>
+      <p class="anim-hero">Développeur de passion, mon travail n'est qu'une partie de plaisir. Selon moi, c'est primordial pour faire des projets soignés et de qualité ! <br><br>
       Votre projet sera peut-être le prochain ?</p>
-      <nuxt-link to="/contact"><button class="button">Contact</button></nuxt-link>
+      <nuxt-link to="/contact"><button class="button anim-hero">Contact</button></nuxt-link>
     </div>
-    <div class="container-image">
+    <div class="container-image anim-hero">
       <nuxt-img alt="matteo courquin" preload sizes="sm:100vw md:100vw lg:100vw" src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
-      <p>depuis</p>
-      <p class="coding-since-items"><span class="number"><span v-if="showZero(years)">0</span>{{ years }}</span>{{ isPlural(years, "an") }}</p>
-      <div class="months coding-since-lines"></div>
-      <p class="months coding-since-items"><span class="number"><span v-if="showZero(months)">0</span>{{ months }}</span>mois</p>
-      <div class="days coding-since-lines"></div>
-      <p class="days coding-since-items"><span class="number"><span v-if="showZero(days)">0</span>{{ days }}</span>{{ isPlural(days, "jour") }}</p>
-      <div class="hours coding-since-lines"></div>
-      <p class="hours coding-since-items"><span class="number"><span v-if="showZero(hours)">0</span>{{ hours }}</span>{{ isPlural(hours, "heure") }}</p>
-      <div class="minutes coding-since-lines"></div>
-      <p class="minutes coding-since-items"><span class="number"><span v-if="showZero(minutes)">0</span>{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
-      <div class="seconds coding-since-lines"></div>
-      <p class="seconds coding-since-items"><span class="number"><span v-if="showZero(seconds)">0</span>{{ seconds }}</span>{{ isPlural(seconds, "seconde") }}</p>
+      <p class="anim-hero">depuis</p>
+      <p class="coding-since-items anim-hero"><span class="number"><span v-if="showZero(years)">0</span>{{ years }}</span>{{ isPlural(years, "an") }}</p>
+      <div class="months coding-since-lines anim-hero"></div>
+      <p class="months coding-since-items anim-hero"><span class="number"><span v-if="showZero(months)">0</span>{{ months }}</span>mois</p>
+      <div class="days coding-since-lines anim-hero"></div>
+      <p class="days coding-since-items anim-hero"><span class="number"><span v-if="showZero(days)">0</span>{{ days }}</span>{{ isPlural(days, "jour") }}</p>
+      <div class="hours coding-since-lines anim-hero"></div>
+      <p class="hours coding-since-items anim-hero"><span class="number"><span v-if="showZero(hours)">0</span>{{ hours }}</span>{{ isPlural(hours, "heure") }}</p>
+      <div class="minutes coding-since-lines anim-hero"></div>
+      <p class="minutes coding-since-items anim-hero"><span class="number"><span v-if="showZero(minutes)">0</span>{{ minutes }}</span>{{ isPlural(minutes, "minute") }}</p>
+      <div class="seconds coding-since-lines anim-hero"></div>
+      <p class="seconds coding-since-items anim-hero"><span class="number"><span v-if="showZero(seconds)">0</span>{{ seconds }}</span>{{ isPlural(seconds, "seconde") }}</p>
     </div>
   </div>
 </template>
 
 <script>
-// import { gsap } from "gsap";
+
+  import { gsap } from "gsap";
 
   export default {
   data() {
@@ -74,6 +75,19 @@
     }
   },
   mounted() {
+
+    window.addEventListener('load', () => {
+      let animHero = gsap.utils.toArray('.anim-hero')
+      animHero.forEach((item, index) => {
+        let tl = gsap.timeline()
+        tl.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: .5,
+        }).delay(index * .2)
+      })
+    })
+
     let dateNow = new Date()
     let codingSince = new Date('Wed Apr 15 2020 16:00:00 GMT+0100')
 
@@ -93,6 +107,11 @@
 </script>
 
 <style scoped lang='scss'>
+
+.anim-hero{
+  opacity: 0;
+  transform: translateY(-50px);
+}
 
 .hero{
   width: calc(100% - 220px);

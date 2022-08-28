@@ -5,7 +5,7 @@
     </div>
     <section class="section project">
 
-      <div v-for="(project, i) in projects" class="card-project">
+      <div v-for="(project, i) in projects" class="card-project events">
         <div class="project-image">
           <a :href="'projets/#' + (i + 1)" class="links-img" aria-label="lien vers le projet">
             <nuxt-img :src="project.image" alt="" loading="lazy" sizes="sm:100vw md:100vw lg:100vw" quality="10" />
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <nuxt-link to="/projects"><button class="button all-project">Tous les projets</button></nuxt-link>
+      <nuxt-link to="/projects"><button class="events button all-project">Tous les projets</button></nuxt-link>
 
     </section>
   </div>
@@ -30,24 +30,24 @@
 <script>
 
 export default {
-data() {
-  return {
-    projects: [
-       {
-        title: 'zLawyer',
-        description: "<a class='links' href='https://www.zlawyer.fr/logiciel-avocats/' target='_blank'>zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class='links' href='https://august1.dev' target='_blank'>Augustin Briolon</a>",
-        image: '/images/projects/zLawyer.png',
-        link: 'https://www.zlawyer.fr/logiciel-avocats/'
-      },
-      {
-        title: 'NL • Architecture',
-        description: "Intégration de la maquette de <a class='links' href='https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page' target='_blank'>Nadya Lazurenko</a>",
-        image: '/images/projects/nlArchitecture.png',
-        link: 'https://nl-architecture.courqu.in/'
-      },
-    ]
-  };
-},
+  data() {
+    return {
+      projects: [
+        {
+          title: 'zLawyer',
+          description: "<a class='links' href='https://www.zlawyer.fr/logiciel-avocats/' target='_blank'>zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class='links' href='https://august1.dev' target='_blank'>Augustin Briolon</a>",
+          image: '/images/projects/zLawyer.png',
+          link: 'https://www.zlawyer.fr/logiciel-avocats/'
+        },
+        {
+          title: 'NL • Architecture',
+          description: "Intégration de la maquette de <a class='links' href='https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page' target='_blank'>Nadya Lazurenko</a>",
+          image: '/images/projects/nlArchitecture.png',
+          link: 'https://nl-architecture.courqu.in/'
+        },
+      ]
+    };
+  },
 }
 
 </script>

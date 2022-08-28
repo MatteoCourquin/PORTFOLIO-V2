@@ -1,6 +1,7 @@
 .container-section.solo-section{
   min-height: 100vh;
   align-items: center;
+  // overflow-y: hidden;
   .title-section{
     align-self: flex-start;
   }
@@ -64,8 +65,6 @@
       margin: 10px 0 30px 0;
       min-height: 100vh;
     }
-
-    overflow: hidden;
   }
 }
 

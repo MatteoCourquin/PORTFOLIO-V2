@@ -44,19 +44,21 @@ export default {
     };
   },
   methods: {
+    progressScrollBar() {
+      window.addEventListener("scroll", () => {
+
+        let height = document.documentElement.scrollHeight - window.innerHeight;
+        let position = window.scrollY;
+        let circle = (position / height) * 625;
+
+        document.getElementById("progress-bar-circle").style.strokeDashoffset = circle - 625;
+
+      });
+    }
   },
   mounted() {
     this.isActive = false;
-
-    window.addEventListener("scroll", () => {
-
-      let height = document.documentElement.scrollHeight - window.innerHeight;
-      let position = window.scrollY;
-      let circle = (position / height) * 625;
-
-      document.getElementById("progress-bar-circle").style.strokeDashoffset = circle - 625;
-
-    });
+    this.progressScrollBar()
   },
 };
 </script>
