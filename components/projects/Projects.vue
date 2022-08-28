@@ -8,7 +8,7 @@
       <!-- Card Project -->
       <div v-for="(project, i) in projects" :id="i+1" class="card-project">
         <div class="project-image">
-          <nuxt-img format="png" class="links-img" :src="project.image" quality="10" loading="lazy"/>
+          <nuxt-img format="png" class="links-img" :src="project.image" quality="10" loading="lazy" alt="projet réalisé par matteo courquin"/>
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -16,7 +16,7 @@
           <div class="line"></div>
           <p v-html="project.description"></p>
           <h3>{{ project.title }}</h3>
-          <a :href="project.link" target="_blank" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
+          <a :href="project.link" target="_blank" aria-label="lien vers le projet" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
       </div>
 

@@ -7,7 +7,7 @@
       <div class="about-description">
         <div class="line"></div>
         <div class="rectangle"></div>
-        <nuxt-img preload src="/images/logos/quote.svg" class="quote" />
+        <nuxt-img preload src="/images/logos/quote.svg" class="quote" alt=""/>
 
         <p>Je m'appelle Matteo, je suis developpeur front-end depuis {{ years }} ans et {{ months }} mois.</p>
 
@@ -24,7 +24,7 @@
         <a href="documents/CV.pdf" target="_blank"><button class="button">Mon CV</button></a>
       </div>
       <div class="about-cv">
-        <a href="documents/CV.pdf" target="_blank"><nuxt-img src="/images/about/CV.png"/></a>
+        <a href="documents/CV.pdf" target="_blank"><nuxt-img alt="cv de matteo courquin" src="/images/about/CV.png"/></a>
       </div>
     </section>
   </div>
