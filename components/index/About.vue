@@ -24,7 +24,7 @@
         <a href="documents/CV.pdf" target="_blank"><button class="button">Mon CV</button></a>
       </div>
       <div class="about-cv">
-        <a href="documents/CV.pdf" target="_blank"><nuxt-img alt="cv de matteo courquin" src="/images/about/CV.png"/></a>
+        <a href="documents/CV.pdf" target="_blank"><nuxt-img sizes="sm:100vw md:100vw lg:100vw" alt="cv de matteo courquin" src="/images/about/CV.png"/></a>
       </div>
     </section>
   </div>

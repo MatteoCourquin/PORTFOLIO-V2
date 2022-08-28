@@ -11,7 +11,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { name: 'description', content: 'Un développeur web a votre écoute pour un projet a vos attentes !' },
       { name: 'format-detection', content: 'telephone=no' },
       // Open Graph
       { property: 'og:title', content: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀" },
@@ -21,7 +21,6 @@ export default {
       // Google
       { name: 'google-site-verification', content: '6n81QjyK4C02a8g9mMeuhdHqnAcjhHRxsGVdgXVGQ2Y' },
       { name: 'referrer', content: 'default' },
-      { name: 'description', content: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },

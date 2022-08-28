@@ -7,7 +7,7 @@
       <nuxt-link to="/contact"><button class="button">Contact</button></nuxt-link>
     </div>
     <div class="container-image">
-      <nuxt-img alt="matteo courquin" preload src='/images/profile-img.png'/>
+      <nuxt-img alt="matteo courquin" preload sizes="sm:100vw md:100vw lg:100vw" src='/images/profile-img.png'/>
     </div>
     <div class="container-coding-since">
       <p>depuis</p>

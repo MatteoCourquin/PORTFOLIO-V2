@@ -8,7 +8,7 @@
       <!-- Card Project -->
       <div v-for="(project, i) in projects" :id="i+1" class="card-project">
         <div class="project-image">
-          <nuxt-img format="png" class="links-img" :src="project.image" sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw" quality="10"  loading="lazy" alt="projet réalisé par matteo courquin"/>
+          <nuxt-img format="png" class="links-img" :src="project.image" sizes="sm:100vw md:100vw lg:100vw" quality="10"  loading="lazy" alt="projet réalisé par matteo courquin"/>
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
