@@ -11,6 +11,9 @@
 
         <div class="container-burger-circle">
           <nuxt-img preload src="/images/logos/burger-circle.svg" ref="burgerCircle" class="burger-circle" />
+          <svg class="progress-bar" id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+            <circle id="progress-bar-circle" cx="100" cy="100" r="99" fill="none" stroke="#000" stroke-width="2"/>
+          </svg>
         </div>
 
       </div>
@@ -30,6 +33,7 @@
 </template>
 
 <script>
+
 import Footer from '../components/Footer.vue';
 
 export default {
@@ -43,6 +47,16 @@ export default {
   },
   mounted() {
     this.isActive = false;
+
+    window.addEventListener("scroll", () => {
+
+      let height = document.documentElement.scrollHeight - window.innerHeight;
+      let position = window.scrollY;
+      let circle = (position / height) * 625;
+
+      document.getElementById("progress-bar-circle").style.strokeDashoffset = circle;
+
+    });
   },
 };
 </script>
@@ -199,6 +213,9 @@ header.active{
 }
 
 .container-burger-circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -211,7 +228,14 @@ header.active{
     width: 100%;
     position: absolute;
 
-    animation: rotate 10s infinite linear;
+    animation: rotate 15s infinite linear;
+  }
+  .progress-bar{
+    stroke-dasharray: 625;
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg);
+    padding: 22px;
+    position: absolute;
   }
 }
 

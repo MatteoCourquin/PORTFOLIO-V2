@@ -4,6 +4,7 @@ h1{
     font-size: clamp(2rem, 4.5vw, 5rem);
     line-height: clamp(2rem, 4.5vw, 5rem);
     text-transform: uppercase;
+    text-shadow: 3px 3px 0 $color-white;
 }
 h2{
     font-family: $font-montserrat-black;

@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      counter: 10
+      counter: 20
     };
   },
   mounted() {
