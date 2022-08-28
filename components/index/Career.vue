@@ -11,7 +11,7 @@
 
         <!-- Card Career -->
         <div v-for="(careerItem) in careerItems" class="card-career">
-          <h4>{{ careerItem.title }}</h4>
+          <h3>{{ careerItem.title }}</h3>
           <p>{{ careerItem.description }}</p>
           <div class="line"></div>
           <span class="number">{{ careerItem.years }}</span>
@@ -205,8 +205,11 @@ export default {
   &:nth-child(odd){
     transform: translateY(50%);
   }
-  h4, .number{
+  h3, .number{
     white-space: nowrap
+  }
+  h3{
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
   }
   .rectangle{
     width: 80px;

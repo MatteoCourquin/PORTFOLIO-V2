@@ -7,7 +7,7 @@
 
       <div v-for="(project, i) in projects" class="card-project">
         <div class="project-image">
-          <a :href="'projets/#' + (i + 1)" class="links-img">
+          <a :href="'projets/#' + (i + 1)" class="links-img" aria-label="lien vers le projet">
             <nuxt-img :src="project.image" quality="10" alt="" loading="lazy"/>
           </a>
           <div class="rectangle-image"></div>

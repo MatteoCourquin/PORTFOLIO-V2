@@ -10,7 +10,7 @@
         </div>
 
         <div class="container-burger-circle">
-          <nuxt-img preload src="/images/logos/burger-circle.svg" ref="burgerCircle" class="burger-circle" alt=""/>
+          <nuxt-img preload src="/images/logos/burger-circle.svg" quality="10" ref="burgerCircle" class="burger-circle" alt=""/>
           <svg class="progress-bar" id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
             <circle id="progress-bar-circle" cx="100" cy="100" r="99" fill="none" stroke="#000" stroke-width="2"/>
           </svg>
