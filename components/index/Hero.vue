@@ -76,7 +76,7 @@
   },
   mounted() {
 
-    window.addEventListener('load', () => {
+    // window.addEventListener('load', () => { 
       let animHero = gsap.utils.toArray('.anim-hero')
       animHero.forEach((item, index) => {
         let tl = gsap.timeline()
@@ -84,9 +84,9 @@
           opacity: 1,
           y: 0,
           duration: .5,
-        }).delay(index * .2)
+        }).delay(index * .1)
       })
-    })
+    // })
 
     let dateNow = new Date()
     let codingSince = new Date('Wed Apr 15 2020 16:00:00 GMT+0100')

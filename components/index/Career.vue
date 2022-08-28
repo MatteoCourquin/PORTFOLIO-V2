@@ -10,7 +10,7 @@
     <!-- <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false"> -->
 
         <!-- Card Career -->
-        <div v-for="(careerItem) in careerItems" class="card-career">
+        <div v-for="(careerItem) in careerItems" class="anim-career card-career">
           <h3>{{ careerItem.title }}</h3>
           <p>{{ careerItem.description }}</p>
           <div class="line"></div>
@@ -27,6 +27,10 @@
 </template>
 
 <script>
+
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
 
@@ -139,6 +143,23 @@ export default {
     }
   },
   mounted() {
+
+    let animCareer = gsap.utils.toArray('.anim-career')
+    animCareer.forEach((item, index) => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".career",
+          start:"top 80%",
+          toggleActions:"restart none none reverse",
+          end: "bottom 90%",
+        },
+      })
+      .to(item, {
+        opacity: 1,
+        duration: .5,
+      }).delay(index * .3)
+    })
+
     this.isMobile()
   },
 }
@@ -146,6 +167,10 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+
+.anim-career{
+  opacity: 0;
+}
 
 .career{
   overflow: scroll !important;

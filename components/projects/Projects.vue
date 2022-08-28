@@ -3,20 +3,20 @@
     <div class="title-section">
       <h2>Projets</h2>
     </div>
-    <section class="section projects">
+    <section class="section projects" id="projects">
 
       <!-- Card Project -->
       <div v-for="(project, i) in projects" :id="i+1" class="card-project">
         <div class="project-image">
-          <nuxt-img format="png" class="links-img" :src="project.image" sizes="sm:100vw md:100vw lg:100vw" quality="10"  loading="lazy" alt="projet réalisé par matteo courquin"/>
+          <nuxt-img format="png" class="links-img" :src="project.image" sizes="sm:100vw md:100vw lg:100vw" quality="10" alt="projet réalisé par matteo courquin"/>
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
           <span class="number"><span v-if="i < 9">0</span>{{ i + 1 }}</span>
           <div class="line"></div>
           <p v-html="project.description"></p>
-          <h3>{{ project.title }}</h3>
-          <a :href="project.link" target="_blank" aria-label="lien vers le projet" class="links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
+          <h3 class="anim-projetcs">{{ project.title }}</h3>
+          <a :href="project.link" target="_blank" aria-label="lien vers le projet" class="anim-projetcs links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
         </div>
       </div>
 
@@ -26,50 +26,87 @@
 
 <script>
 
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
-data() {
-  return {
-    projects: [
-      {
-        title: 'zLawyer',
-        description: "<a class='links' href='https://www.zlawyer.fr/logiciel-avocats/' target='_blank'>zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class='links' href='https://august1.dev' target='_blank'>Augustin Briolon</a>",
-        image: '/images/projects/zLawyer.png',
-        link: 'https://www.zlawyer.fr/logiciel-avocats/'
-      },
-      {
-        title: 'NL • Architecture',
-        description: "Intégration de la maquette de <a class='links' href='https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page' target='_blank'>Nadya Lazurenko</a>",
-        image: '/images/projects/nlArchitecture.png',
-        link: 'https://nl-architecture.courqu.in/'
-      },
-      {
-        title: 'Semicolon',
-        description: "Un projet d'études voué a sensibiliser sur les problématiques étudiantes.",
-        image: '/images/projects/semicolon.png',
-        link: 'https://semicolon.vercel.app'
-      },
-      {
-        title: 'La Villa Savoye',
-        description: "Un de mes projets de fin d'année préparatoire. Le thème du site était 'un monument ou un lieu culte en île-de-france'. <br>J'ai choisi <a href='https://www.villa-savoye.fr/' target='_blank' class='links'>la Villa Savoye</a> en raison de ma passion pour l'architecture et <a href='http://www.fondationlecorbusier.fr/' target='_blank' class='links'>le Corbusier</a>.",
-        image: '/images/projects/villaSavoye.png',
-        link: 'https://lavillasavoye-matteocourquin.herokuapp.com/index.php'
-      },
-      {
-        title: 'La défense',
-        description: "Un projet d'études dont le but était de réaliser une maquette UI. J'ai décidé de l'intégrer pour m'amuser !",
-        image: '/images/projects/laDefense.png',
-        link: 'https://la-defense.courqu.in/index.html'
-      },
-    ]
-  };
-},
+
+  data() {
+    return {
+      projects: [
+        {
+          title: 'zLawyer',
+          description: "<a class='links' href='https://www.zlawyer.fr/logiciel-avocats/' target='_blank'>zLawyer</a> est un logiciel de gestion de cabinets d'avocats. Ils m'ont contacter pour refonte leur site afin de vendre et présenter leur logiciel. <br><br>J'ai réalisé le projet en collaboration avec <a class='links' href='https://august1.dev' target='_blank'>Augustin Briolon</a>",
+          image: '/images/projects/zLawyer.png',
+          link: 'https://www.zlawyer.fr/logiciel-avocats/'
+        },
+        {
+          title: 'NL • Architecture',
+          description: "Intégration de la maquette de <a class='links' href='https://dribbble.com/shots/16631037-Architectural-Studio-Landing-Page' target='_blank'>Nadya Lazurenko</a>",
+          image: '/images/projects/nlArchitecture.png',
+          link: 'https://nl-architecture.courqu.in/'
+        },
+        {
+          title: 'Semicolon',
+          description: "Un projet d'études voué a sensibiliser sur les problématiques étudiantes.",
+          image: '/images/projects/semicolon.png',
+          link: 'https://semicolon.vercel.app'
+        },
+        {
+          title: 'La Villa Savoye',
+          description: "Un de mes projets de fin d'année préparatoire. Le thème du site était 'un monument ou un lieu culte en île-de-france'. <br>J'ai choisi <a href='https://www.villa-savoye.fr/' target='_blank' class='links'>la Villa Savoye</a> en raison de ma passion pour l'architecture et <a href='http://www.fondationlecorbusier.fr/' target='_blank' class='links'>le Corbusier</a>.",
+          image: '/images/projects/villaSavoye.png',
+          link: 'https://lavillasavoye-matteocourquin.herokuapp.com/index.php'
+        },
+        {
+          title: 'La défense',
+          description: "Un projet d'études dont le but était de réaliser une maquette UI. J'ai décidé de l'intégrer pour m'amuser !",
+          image: '/images/projects/laDefense.png',
+          link: 'https://la-defense.courqu.in/index.html'
+        },
+      ]
+    };
+  },
+  mounted() {
+    let container = document.getElementById("projects");
+
+    gsap.to(container, {
+      x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        invalidateOnRefresh: true,
+        pin: true,
+        scrub: 1,
+        end: () => "+=" + container.offsetWidth
+      }
+    })
+    // let animProjetcs = gsap.utils.toArray('.anim-projetcs')
+    // animProjetcs.forEach((item, index) => {
+    //   gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: ".card-project",
+    //       start:"top 70%",
+    //       toggleActions:"restart none none reverse",
+    //       end: "bottom 90%",
+    //     },
+    //   })
+    //   .to(item, {
+    //     opacity: 1,
+    //     y: 0,
+    //     duration: .5,
+    //   }).delay(index * .1)
+    // })
+  }
 }
 
 </script>
 
 <style scoped lang='scss'>
+
 .section.projects{
-  overflow: auto;
+  overflow-x: scroll;
   display: flex;
   scroll-snap-type: x mandatory;
   &::-webkit-scrollbar {

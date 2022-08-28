@@ -45,11 +45,9 @@ export default {
   },
   mounted() {
 
-  
-
     let animAbout = gsap.utils.toArray('.anim-about')
     animAbout.forEach((item, index) => {
-      let tl = gsap.timeline({
+      gsap.timeline({
         scrollTrigger: {
           trigger: ".about",
           start:"top 70%",
@@ -61,9 +59,8 @@ export default {
         opacity: 1,
         y: 0,
         duration: .5,
-      }).delay(index * .2)
+      }).delay(index * .1)
     })
-
 
     let dateNow = new Date()
     let codingSince = new Date('Wed Apr 15 2020 16:00:00 GMT+0100')
@@ -116,7 +113,7 @@ export default {
       background: $color-white;
       position: absolute;
       z-index: -1;
-      top: -100px;
+      top: 100px;
       transform: translate(-50%, -40px);
     }
     .line{

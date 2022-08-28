@@ -19,6 +19,7 @@ import Projects from '../components/index/Projects.vue';
 import Career from '../components/index/Career.vue';
 import About from '../components/index/About.vue';
 import Footer from '../components/Footer.vue';
+
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

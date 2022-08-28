@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <nuxt-link to="/projects"><button class="events button all-project">Tous les projets</button></nuxt-link>
+      <nuxt-link to="/projects"><button class="button all-project">Tous les projets</button></nuxt-link>
 
     </section>
   </div>

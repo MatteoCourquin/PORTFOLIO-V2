@@ -29,7 +29,7 @@ body{
   max-width: 2000px;
   margin: 0 auto;
 
-  overflow-x: hidden;
+  overflow-y: hidden;
 
   @include background-image;
 }
