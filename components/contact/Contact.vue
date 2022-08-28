@@ -193,7 +193,7 @@ export default {
         flex-shrink: 0;
       }
     }
-    input, textarea{
+    input[type="text"], input[type="phone"], input[type="mail"], textarea{
       outline: none;
       border-radius: 0;
       border: 2px solid $color-black;
@@ -203,10 +203,17 @@ export default {
       resize: none;
       font-family: $font-montserrat-medium;
       font-size: 16px;
+      transition: .2s;
       &::placeholder{
           color: lighten($color-black, 40%);
           font-family: $font-montserrat-medium;
           font-size: 16px;
+      }
+      &:hover{
+        background: rgba(255, 255, 255, 0.7);
+      }
+      &:focus{
+        background: rgba(255, 255, 255, 0.7);
       }
     }
     textarea{

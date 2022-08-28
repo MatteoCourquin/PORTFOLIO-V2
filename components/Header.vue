@@ -54,7 +54,7 @@ export default {
       let position = window.scrollY;
       let circle = (position / height) * 625;
 
-      document.getElementById("progress-bar-circle").style.strokeDashoffset = circle;
+      document.getElementById("progress-bar-circle").style.strokeDashoffset = circle - 625;
 
     });
   },
@@ -232,8 +232,8 @@ header.active{
   }
   .progress-bar{
     stroke-dasharray: 625;
-    stroke-dashoffset: 0;
-    transform: rotate(-90deg);
+    stroke-dashoffset: 625;
+    transform: rotate3d(0, 1, 0, 180deg) rotate(-90deg);
     padding: 22px;
     position: absolute;
   }

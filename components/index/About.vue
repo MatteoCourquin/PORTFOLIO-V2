@@ -9,7 +9,7 @@
         <div class="rectangle"></div>
         <nuxt-img preload src="/images/logos/quote.svg" class="quote" />
 
-        <p>Je m'appelle Matteo, je suis developpeur frontend depuis {{ years }} ans et {{ months }} mois.</p>
+        <p>Je m'appelle Matteo, je suis developpeur front-end depuis {{ years }} ans et {{ months }} mois.</p>
 
         <p>Initialement parti pour être architecte, c'est lors du confinement que ma vie a pris un autre tournant.</p>
         

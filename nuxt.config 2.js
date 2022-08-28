@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀",
+    title: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀",
     htmlAttrs: {
       lang: 'fr'
     },
@@ -14,14 +14,14 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
       // Open Graph
-      { property: 'og:title', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
-      { property: 'og:description', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
+      { property: 'og:title', content: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀" },
+      { property: 'og:description', content: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀" },
       { property: 'og:url', content: 'matteo.courqu.in' },
       { property: 'og:image', content: '/ogImage.png' },
       // Google
       { name: 'google-site-verification', content: '6n81QjyK4C02a8g9mMeuhdHqnAcjhHRxsGVdgXVGQ2Y' },
       { name: 'referrer', content: 'default' },
-      { name: 'description', content: "Matteo Courquin | Le Portfolio d'un Développeur Frontend !! 🚀" },
+      { name: 'description', content: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
