@@ -134,6 +134,10 @@
     @include screen-xs{
       display: none;
     }
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
   .container-coding-since{
     padding: clamp(20px, 4vw, 60px) 0;

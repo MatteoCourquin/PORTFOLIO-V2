@@ -7,7 +7,7 @@
       <div class="about-description">
         <div class="line"></div>
         <div class="rectangle"></div>
-        <nuxt-img preload src="/images/logos/quote.svg" class="quote" alt=""/>
+        <nuxt-img preload src="/images/logos/quote.svg" quality="10" class="quote" alt=""/>
 
         <p>Je m'appelle Matteo, je suis developpeur front-end depuis {{ years }} ans et {{ months }} mois.</p>
 
