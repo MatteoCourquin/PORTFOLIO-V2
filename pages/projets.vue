@@ -29,8 +29,6 @@ body{
   max-width: 2000px;
   margin: 0 auto;
 
-  overflow-y: hidden;
-
   @include background-image;
 }
 

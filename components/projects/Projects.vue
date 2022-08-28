@@ -69,19 +69,19 @@ export default {
     };
   },
   mounted() {
-    let container = document.getElementById("projects");
+    // let container = document.getElementById("projects");
 
-    gsap.to(container, {
-      x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        invalidateOnRefresh: true,
-        pin: true,
-        scrub: 1,
-        end: () => "+=" + container.offsetWidth
-      }
-    })
+    // gsap.to(container, {
+    //   x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: container,
+    //     invalidateOnRefresh: true,
+    //     pin: true,
+    //     scrub: 1,
+    //     end: () => "+=" + container.offsetWidth
+    //   }
+    // })
     // let animProjetcs = gsap.utils.toArray('.anim-projetcs')
     // animProjetcs.forEach((item, index) => {
     //   gsap.timeline({
