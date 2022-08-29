@@ -20,6 +20,12 @@
         </div>
       </div>
 
+      <div class="nav-projects">
+        <li>
+          <ul v-for="(project, i) in projects"><a class="links" :href="'#' + (i + 1)">{{ i + 1 }}</a></ul>
+        </li>
+      </div>
+
     </section>
   </div>
 </template>
@@ -68,42 +74,28 @@ export default {
       ]
     };
   },
-  mounted() {
-    // let container = document.getElementById("projects");
-
-    // gsap.to(container, {
-    //   x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: container,
-    //     invalidateOnRefresh: true,
-    //     pin: true,
-    //     scrub: 1,
-    //     end: () => "+=" + container.offsetWidth
-    //   }
-    // })
-    // let animProjetcs = gsap.utils.toArray('.anim-projetcs')
-    // animProjetcs.forEach((item, index) => {
-    //   gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: ".card-project",
-    //       start:"top 70%",
-    //       toggleActions:"restart none none reverse",
-    //       end: "bottom 90%",
-    //     },
-    //   })
-    //   .to(item, {
-    //     opacity: 1,
-    //     y: 0,
-    //     duration: .5,
-    //   }).delay(index * .1)
-    // })
-  }
+  mounted() {}
 }
 
 </script>
 
 <style scoped lang='scss'>
+
+.nav-projects{
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 110px);
+  transform: translateX(-50%);
+  li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    ul{
+      padding: 0 10px;
+    }
+  }
+}
 
 .section.projects{
   overflow-x: scroll;

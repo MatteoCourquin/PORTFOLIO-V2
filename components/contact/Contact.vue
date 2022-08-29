@@ -120,7 +120,7 @@ export default {
 
         const vm = this
 
-        axios.post("https://api-portfolio-three.vercel.app/post", data, options)
+        axios.post("https://api-portfolio.courqu.in/post", data, options)
         .then(function (req) {
           if (req.status == 200) {
             vm.errors.notSend = ''
