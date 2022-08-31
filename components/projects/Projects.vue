@@ -8,7 +8,7 @@
       <!-- Card Project -->
       <div v-for="(project, i) in projects" :id="i+1" class="card-project">
         <div class="project-image">
-          <nuxt-img format="png" class="links-img" :src="project.image" sizes="sm:100vw md:100vw lg:100vw" quality="100" alt="projet réalisé par matteo courquin"/>
+          <nuxt-img format="png" class="links-img" :src="project.image" sizes="xs:400 sm:700 md:800 lg:1400 xl:1800" quality="10" alt="projet réalisé par matteo courquin"/>
           <div class="rectangle-image"></div>
         </div>
         <div class="project-description">
@@ -97,8 +97,9 @@ export default {
     justify-content: center;
     align-items: flex-end;
     list-style-type: none;
-    ul{
+    ul a{
       padding: 0 10px;
+      transition: .1s;
       &:hover{
         font-size: 23px;
       }
