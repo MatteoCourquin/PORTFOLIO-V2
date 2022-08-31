@@ -45,6 +45,9 @@ export default {
   },
   methods: {
     progressScrollBar() {
+
+      console.log(document.location.href);
+      
       window.addEventListener("scroll", () => {
 
         let height = document.documentElement.scrollHeight - window.innerHeight;
