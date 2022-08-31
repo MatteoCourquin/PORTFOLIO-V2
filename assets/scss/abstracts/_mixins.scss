@@ -29,3 +29,8 @@
     -webkit-filter: grayscale(1);
     opacity: .6;
 }
+
+@mixin filter-background {
+    backdrop-filter: blur( 50px );
+    -webkit-backdrop-filter: blur( 50px );
+}

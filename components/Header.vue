@@ -138,8 +138,7 @@ header.active{
 
     position: relative;
 
-    backdrop-filter: blur( 50px );
-    -webkit-backdrop-filter: blur( 50px );
+    @include filter-background;
 
     display: flex;
     justify-content: center;

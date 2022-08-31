@@ -4,7 +4,7 @@
     <p>Votre demande a été enregistrée.</p>
     <nuxt-img preload src='images/logos/mail-send.svg' alt=""/>
     <p>Je m'efforce de vous répondre dans les plus brefs délais. Au plaisir de collaborer avec vous !</p>
-    <p>Vous allez automatiquement être redirigé vers l'accueil dans {{ counter }} secondes</p>
+    <p>Accueil dans {{ counter }} seconde<span v-if="counter >= 2">s</span></p>
     <nuxt-link to="/"><button class="button">Accueil</button></nuxt-link>
   </div>
 </template>

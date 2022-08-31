@@ -2,7 +2,6 @@
   <div>
     <div class="first-section-rectangle"></div>
     <div class="first-section-rectangle"></div>
-    <div class="first-section-rectangle"></div>
     <Header/>
     <Projects/>
   </div>

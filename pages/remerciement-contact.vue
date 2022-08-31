@@ -1,5 +1,7 @@
 <template>
   <div>
+    <div class="first-section-rectangle"></div>
+    <div class="first-section-rectangle"></div>
     <Success />
   </div>
 </template>
