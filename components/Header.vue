@@ -46,9 +46,8 @@ export default {
   methods: {
     progressScrollBar() {
 
-      console.log(document.location.href);
-      
-      window.addEventListener("scroll", () => {
+      if (document.location.pathname == '/') {
+        window.addEventListener("scroll", () => {
 
         let height = document.documentElement.scrollHeight - window.innerHeight;
         let position = window.scrollY;
@@ -56,7 +55,10 @@ export default {
 
         document.getElementById("progress-bar-circle").style.strokeDashoffset = circle - 625;
 
-      });
+        }); 
+      } else {
+        document.getElementById("progress-bar-circle").style.strokeDashoffset = 625;
+      }
     }
   },
   mounted() {
