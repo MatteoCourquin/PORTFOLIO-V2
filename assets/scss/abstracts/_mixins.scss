@@ -18,9 +18,9 @@
 };
 
 @mixin background-image {
-    background-image: url("~static/images/background.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background: linear-gradient(300deg,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff);
+    background-size: 420% 420%;
+    animation: gradient-animation 30s infinite;
     background-attachment: fixed;
 }
 

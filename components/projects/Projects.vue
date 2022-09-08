@@ -118,10 +118,7 @@ export default {
     scroll-snap-align: start;
     padding: 0 clamp(20px, 4vw, 60px);
     flex-shrink: 0;
-    width: calc(100vw - 220px);
-    @include screen-m {
-      width: 100vw;
-    }
+    width: 100%;
     height: fit-content;
     position: relative;
     .project-image{

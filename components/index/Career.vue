@@ -6,8 +6,8 @@
     <div class="title-section">
       <h2>Carière</h2>
     </div>
-    <section ref="sectionCareer" class="section career">
-    <!-- <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false"> -->
+    <!-- <section ref="sectionCareer" class="section career"> -->
+    <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false">
 
         <!-- Card Career -->
         <div v-for="(careerItem) in careerItems" class="anim-career card-career">
@@ -80,7 +80,7 @@ export default {
 
       if (window.innerWidth >= 2000) {
         left = `calc(${event.pageX}px - (100vw - 2000px) / 2)`
-        // windowWidth = windowWidth - ((window.innerWidth - 2000) / 2) 
+        // windowWidth = windowWidth - ((window.innerWidth - 2000) / 2)
       }
 
       console.log("scroll position : " + scrollPosition);
@@ -97,6 +97,8 @@ export default {
 
     },
     scroll() {
+      this.returnArrow()
+
       let containerWidth = this.$refs.timeLine.offsetWidth
       let scrollPosition = this.$refs.sectionCareer.scrollLeft
       let windowWidth = window.innerWidth - 220

@@ -98,8 +98,6 @@ header{
     position: absolute;
     bottom: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
   }
   .header-nav{
     li{
@@ -137,6 +135,7 @@ header.active{
     border: none;
   }
   .container-burger{
+    overflow: hidden;
     width: 100%;
     aspect-ratio: 1 / 1;
     padding: 20px;
@@ -223,6 +222,7 @@ header.active{
   justify-content: center;
   align-items: center;
   position: absolute;
+
   aspect-ratio: 1 / 1;
   width: 100%;
 
