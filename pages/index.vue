@@ -26,24 +26,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   components: { Header, Hero, Projects, Career, About, Footer },
-  mounted() {
-    let fadein = gsap.utils.toArray('.events')
-    fadein.forEach((item, index) => {
+  data() {
+    return {}
+  },
+  methods: {
+    animGsapToBottom() {
+      let fadein = gsap.utils.toArray('.events')
+      fadein.forEach((item, index) => {
 
-    let tl = gsap.timeline({
-      scrollTrigger: {
-      trigger: item,
-      start:"top 70%",
-      toggleActions:"play none none reverse",
-      end: "bottom 90%",
-      }
-    });
-    tl.from(item, {
-      opacity: 0,
-      y: -50,
-      duration: .5,
+      let tl = gsap.timeline({
+        scrollTrigger: {
+        trigger: item,
+        start:"top 70%",
+        toggleActions:"play none none reverse",
+        end: "bottom 90%",
+        }
       });
-    });
+
+      tl.from(item, {
+        opacity: 0,
+        y: -50,
+        duration: .5,
+        });
+      });
+    }
+  },
+  mounted() {
+    this.animGsapToBottom()
   },
 }
 

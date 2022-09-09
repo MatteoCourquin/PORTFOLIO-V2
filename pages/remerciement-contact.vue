@@ -7,13 +7,10 @@
 </template>
 
 <script>
+
 import Success from "../components/contact/Success.vue";
 
 export default {
-    data() {
-        return {};
-    },
-    methods: {},
     components: { Success }
 }
 

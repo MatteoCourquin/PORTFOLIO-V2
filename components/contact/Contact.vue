@@ -5,34 +5,31 @@
     </div>
     <section class="section contact">
       <h1>Un Projet ?</h1>
-      <p>N'hésitez pas ! Un premier contact est indispensable pour discuter de votre projet. Nous parlerons de ce dernier afin de déterminer le meilleur pour vous.</p>
-      <div class="form">
-        <a class="button" href="mailto:matteo.courquin@gmail.com">Mail</a>
-        <a class="button" href="tel:0652647110">Tel</a>
+      <!-- <p>N'hésitez pas ! Un premier contact est indispensable pour discuter de votre projet. Nous parlerons de ce dernier afin de déterminer le meilleur pour vous.</p> -->
+      <div class="container-form">
+        <iframe class="form" src="https://tally.so/embed/n9qP0Q?alignLeft=1&hideTitle=1&transparentBackground=1" width="90%" frameborder="0" marginheight="0" marginwidth="0"></iframe>
       </div>
     </section>
   </div>
 </template>
 
-<script>
-
-export default {
-}
-
-</script>
-
 <style scoped lang='scss'>
 
-p{
-  width: 70%;
+@include screen-m {
+  h1{
+    display: none;
+  }
 }
-.form{
+.container-form{
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10vh 0;
-  .button{
-    margin: 0 10px;
+  .form{
+    height: 400px;
+    @media screen and (max-width : 717px) {
+      height: 600px;
+    }
   }
 }
 
