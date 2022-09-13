@@ -6,21 +6,21 @@
     <div class="title-section">
       <h2>Carière</h2>
     </div>
-    <!-- <section ref="sectionCareer" class="section career"> -->
-    <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false">
+    <section ref="sectionCareer" class="section career"  @mousemove="moveCursor()" @mouseleave="cursorActive = false">
+    <!-- <section ref="sectionCareer" class="section career" @scroll="returnArrow()" @click="scroll()" @mousemove="moveCursor()" @mouseleave="cursorActive = false"> -->
 
-        <!-- Card Career -->
-        <div v-for="(careerItem) in careerItems" class="anim-career card-career">
-          <h3>{{ careerItem.title }}</h3>
-          <p>{{ careerItem.description }}</p>
-          <div class="line"></div>
-          <span class="number">{{ careerItem.years }}</span>
-          <div class="rectangle"></div>
-        </div>
+      <!-- Card Career -->
+      <div v-for="(careerItem) in careerItems" class="anim-career card-career">
+        <h3>{{ careerItem.title }}</h3>
+        <p>{{ careerItem.description }}</p>
+        <div class="line"></div>
+        <span class="number">{{ careerItem.years }}</span>
+        <div class="rectangle"></div>
+      </div>
 
-        <div ref="timeLine" class="time-line">
-          <div class="time-line-arrow"></div>
-        </div>
+      <div ref="timeLine" class="time-line">
+        <div class="time-line-arrow"></div>
+      </div>
 
     </section>
   </div>
@@ -170,6 +170,10 @@ export default {
 
 <style scoped lang='scss'>
 
+.cursor{
+  z-index: 9;
+}
+
 .anim-career{
   opacity: 0;
 }
@@ -179,7 +183,7 @@ export default {
   display: flex;
   align-items: center;
   width: max-content;
-  cursor: initial;
+  cursor: none;
   transition: all 0.5s ease-in-out;
   height: 500px;
   position: relative;
