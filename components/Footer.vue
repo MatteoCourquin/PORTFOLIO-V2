@@ -33,9 +33,10 @@
 <style scoped lang='scss'>
 
 .container-footer{
-  width: calc(100% - 220px);
+  width: 100%;
+  max-width: 2000px;
 
-  padding: 20px;
+  padding: 20px 240px 20px 0;
 
   @include screen-m {
     width: 100%;

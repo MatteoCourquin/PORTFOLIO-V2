@@ -55,6 +55,8 @@ export default {
 <style scoped lang='scss'>
 
 .project{
+  max-width: 2000px;
+  margin: 0 auto;
   .card-project{
     display: grid;
     align-items: center;
