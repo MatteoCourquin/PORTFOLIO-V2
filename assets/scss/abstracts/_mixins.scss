@@ -18,10 +18,11 @@
 };
 
 @mixin background-image {
-    background: linear-gradient(300deg,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff);
-    background-size: 420% 420%;
-    animation: gradient-animation 30s infinite;
-    background-attachment: fixed;
+    background: $color-white;
+    // background: linear-gradient(300deg,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff);
+    // background-size: 420% 420%;
+    // animation: gradient-animation 30s infinite;
+    // background-attachment: fixed;
 }
 
 @mixin filter-image {

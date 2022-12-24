@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="first-section-rectangle"></div>
-    <div class="first-section-rectangle"></div>
+    <!-- <div class="first-section-rectangle"></div>
+    <div class="first-section-rectangle"></div> -->
     <Header/>
     <Contact/>
   </div>

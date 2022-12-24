@@ -6,10 +6,10 @@
     <section class="section projects" id="projects">
 
       <!-- Card Project -->
-      <div v-for="(project, i) in projects" :id="i+1" class="card-project">
+      <div v-for="(project, i) in projects" :id="i+1" class="card-project" :key="i">
         <div class="project-image">
           <nuxt-img format="png" class="links-img" :src="project.image" sizes="xs:400 sm:700 md:800 lg:1400 xl:1800" alt="projet réalisé par matteo courquin"/>
-          <div class="rectangle-image"></div>
+          <!-- <div class="rectangle-image"></div> -->
         </div>
         <div class="project-description">
           <span class="number"><span v-if="i < 9">0</span>{{ i + 1 }}</span>
@@ -22,7 +22,7 @@
 
       <div class="nav-projects">
         <li>
-          <ul v-for="(project, i) in projects"><a class="links" :href="'#' + (i + 1)">{{ i + 1 }}</a></ul>
+          <ul v-for="(project, i) in projects" :key="i"><a class="links" :href="'#' + (i + 1)">{{ i + 1 }}</a></ul>
         </li>
       </div>
 

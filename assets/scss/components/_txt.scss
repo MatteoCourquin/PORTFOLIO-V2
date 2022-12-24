@@ -4,30 +4,35 @@ h1{
     font-size: clamp(2rem, 4.5vw, 5rem);
     line-height: clamp(2rem, 4.5vw, 5rem);
     text-transform: uppercase;
-    // text-shadow: 3px 3px 0 $color-white;
+    color: $color-black;
 }
 h2{
     font-family: $font-montserrat-black;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     text-transform: uppercase;
+    color: $color-black;
 }
 h3{
     font-family: $font-montserrat-bold;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     text-transform: camelcase;
+    color: $color-black;
 }
 h4{
     font-family: $font-montserrat-medium;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: $color-black;
 }
 .number{
     font-size: clamp(40px, 5vw, 80px);
     line-height: clamp(40px, 5vw, 80px);
     font-family: $font-montserrat-extra-bold;
+    color: $color-black;
 }
 
 p{
     font-family: $font-montserrat-regular;
+    color: $color-black;
 }
 
 .links-img{

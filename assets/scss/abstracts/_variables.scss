@@ -1,53 +1,72 @@
 @font-face {
-  font-family: "Montserrat-Black";
-  src: url("~static/fonts/Montserrat-Black.ttf") format("truetype");
+  font-family: 'Montserrat-Black';
+  src: url('~static/fonts/Montserrat-Black.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat-ExtraBold";
-  src: url("~static/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-family: 'Montserrat-ExtraBold';
+  src: url('~static/fonts/Montserrat-ExtraBold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat-Bold";
-  src: url("~static/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-family: 'Montserrat-Bold';
+  src: url('~static/fonts/Montserrat-Bold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat-SemiBold";
-  src: url("~static/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-family: 'Montserrat-SemiBold';
+  src: url('~static/fonts/Montserrat-SemiBold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat-Regular";
-  src: url("~static/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-family: 'Montserrat-Regular';
+  src: url('~static/fonts/Montserrat-Regular.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat-Medium";
-  src: url("~static/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-family: 'Montserrat-Medium';
+  src: url('~static/fonts/Montserrat-Medium.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat-Light";
-  src: url("~static/fonts/Montserrat-Light.ttf") format("truetype");
+  font-family: 'Montserrat-Light';
+  src: url('~static/fonts/Montserrat-Light.ttf') format('truetype');
   font-display: swap;
 }
 
 // COLOR
-$color-black: #000;
-$color-white: #fff;
-$color-blue: #B8E1FF;
-$color-purple: #BCB6FF;
+$color-black: #333;
+$color-white: #f1f1f1;
+// $color-purple: #BCB6FF;
+// $color-blue: #B8E1FF;
+$color-blue: #1e86d1;
+$color-purple: #7c31ec;
+$color-gray: #f2f2f2;
+$color-first: #1e86d1;
+$color-second: #ad8ae2;
+$color-third: pink;
 
 // FONTS
-$font-montserrat-black: "Montserrat-Black", sans-serif;
-$font-montserrat-extra-bold: "Montserrat-ExtraBold", sans-serif;
-$font-montserrat-bold: "Montserrat-Bold", sans-serif;
-$font-montserrat-semi-bold: "Montserrat-SemiBold", sans-serif;
-$font-montserrat-medium: "Montserrat-Medium", sans-serif;
-$font-montserrat-regular: "Montserrat-Regular", sans-serif;
-$font-montserrat-light: "Montserrat-Light", sans-serif;
+$font-montserrat-black: 'Montserrat-Black', sans-serif;
+$font-montserrat-extra-bold: 'Montserrat-ExtraBold', sans-serif;
+$font-montserrat-bold: 'Montserrat-Bold', sans-serif;
+$font-montserrat-semi-bold: 'Montserrat-SemiBold', sans-serif;
+$font-montserrat-medium: 'Montserrat-Medium', sans-serif;
+$font-montserrat-regular: 'Montserrat-Regular', sans-serif;
+$font-montserrat-light: 'Montserrat-Light', sans-serif;
 
 // TRANSITION
-$current-transition: .3s ease;
+$current-transition: 0.3s ease;
+
+// .first-color{
+//     color: $color-blue;
+//     background-color: $color-blue !important;
+// }
+// .second-color{
+//     color: $color-purple;
+//     background-color: $color-purple !important;
+// }
+// .third-color{
+//     color: $color-gray;
+//     background-color: $color-gray !important;
+// }  
