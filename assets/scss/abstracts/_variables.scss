@@ -37,10 +37,7 @@
 // COLOR
 $color-black: #333;
 $color-white: #f1f1f1;
-// $color-purple: #BCB6FF;
-// $color-blue: #B8E1FF;
-$color-blue: #1e86d1;
-$color-purple: #7c31ec;
+$color-main: #1e86d1;
 $color-gray: #f2f2f2;
 $color-first: #1e86d1;
 $color-second: #ad8ae2;
@@ -56,7 +53,7 @@ $font-montserrat-regular: 'Montserrat-Regular', sans-serif;
 $font-montserrat-light: 'Montserrat-Light', sans-serif;
 
 // TRANSITION
-$current-transition: 0.3s ease;
+$current-transition: 0.3s ease-in-out;
 
 // .first-color{
 //     color: $color-blue;

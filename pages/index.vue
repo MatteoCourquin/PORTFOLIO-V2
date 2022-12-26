@@ -25,7 +25,6 @@ import Footer from '../components/Footer.vue';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { log } from 'console';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -40,8 +39,8 @@ export default {
         console.log(e);
         gsap.to(targets, {
           duration: 3,
-          xPercent: e.screenX / 30,
-          yPercent: e.screenY / 30,
+          xPercent: e.screenX / 40,
+          yPercent: e.screenY / 40,
           ease: 'power4.out',
           overwrite: 'auto',
           stagger: 0.08,
@@ -87,60 +86,6 @@ export default {
 
 <style lang="scss">
 @import '../assets/scss/main.scss';
-
-.round-gradient {
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  position: fixed;
-  opacity: 0.6;
-  z-index: -10;
-  &:nth-child(1) {
-    top: -50%;
-    left: -20%;
-  }
-  &:nth-child(2) {
-    bottom: -10%;
-    right: 30%;
-  }
-  &:nth-child(3) {
-    top: 30%;
-    left: 0%;
-  }
-  &:nth-child(4) {
-    top: -30%;
-    right: 0%;
-  }
-  &:nth-child(5) {
-    top: -10%;
-    left: 20%;
-  }
-  &:nth-child(6) {
-    bottom: -10%;
-    right: 0%;
-  }
-}
-.round-gradient_first {
-  background: radial-gradient(
-    $color-first 0%,
-    transparent 50%,
-    transparent 100%
-  );
-}
-.round-gradient_second {
-  background: radial-gradient(
-    $color-second 0%,
-    transparent 50%,
-    transparent 100%
-  );
-}
-.round-gradient_third {
-  background: radial-gradient(
-    $color-third 0%,
-    transparent 70%,
-    transparent 100%
-  );
-}
 
 body {
   position: relative;

@@ -4,9 +4,9 @@
       <div class="container-burger">
 
         <div v-bind:class="[isActive ? 'active' : '', 'btn-burger']" @click="isActive = !isActive">
-          <div class="lignes"></div>
-          <div class="lignes"></div>
-          <div class="lignes"></div>
+          <div class="lines"></div>
+          <div class="lines"></div>
+          <div class="lines"></div>
         </div>
 
         <div class="container-burger-circle">
@@ -83,7 +83,7 @@ header{
   top: 0;
   left: 0;
 
-  transform: translateY(-100%);
+  transform: translateY(-200%);
 
   transition: $current-transition;
   z-index: 99;
@@ -175,7 +175,7 @@ header.active{
   flex-direction: column;
 
   z-index: 9999;
-  .lignes{
+  .lines{
     width: 100%;
     height: 2px;
 
@@ -191,15 +191,15 @@ header.active{
   }
 
   &:hover{
-    .lignes{
-      background: $color-white;
+    .lines{
+      background: $color-main ;
       width: 100%;
     }
   }
 }
 .btn-burger.active{
   align-items: center;
-  .lignes{
+  .lines{
     width: 100%;
     &:nth-child(1){
       transform: translateY(19px) rotate(-45deg);
@@ -212,7 +212,7 @@ header.active{
     }
   }
   &:hover{
-    .lignes:nth-child(3){
+    .lines:nth-child(3){
       width: 20px;
     }
   }

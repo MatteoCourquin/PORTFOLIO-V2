@@ -66,7 +66,7 @@ footer{
       cursor: pointer;
       transition: .2s;
       &:hover{
-        fill: $color-white;
+        fill: $color-main;
       }
     }
   }

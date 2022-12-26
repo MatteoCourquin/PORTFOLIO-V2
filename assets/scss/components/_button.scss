@@ -40,7 +40,7 @@
   }
 
   &:hover {
-     color: $color-first;
+     color: $color-main;
   }
 
   &:hover::before,
@@ -50,16 +50,16 @@
   }
 
   &:hover::before {
-    border-top-color: $color-first;
-    border-right-color: $color-first;
+    border-top-color: $color-main;
+    border-right-color: $color-main;
     transition:
       width 0.25s ease-out,
       height 0.25s ease-out 0.25s;
   }
 
   &:hover::after {
-    border-bottom-color: $color-first;
-    border-left-color: $color-first;
+    border-bottom-color: $color-main;
+    border-left-color: $color-main;
     transition:
       border-color 0s ease-out 0.5s,
       height 0.25s ease-out,
