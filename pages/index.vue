@@ -3,9 +3,9 @@
     <div class="round-gradient round-gradient_first"></div>
     <div class="round-gradient round-gradient_first"></div>
     <div class="round-gradient round-gradient_third"></div>
-    <div class="round-gradient round-gradient_first"></div>
-    <div class="round-gradient round-gradient_second"></div>
     <div class="round-gradient round-gradient_third"></div>
+    <div class="round-gradient round-gradient_second"></div>
+    <div class="round-gradient round-gradient_second"></div>
     <Header />
     <Hero />
     <Projects />

@@ -81,23 +81,32 @@
   }
   &:nth-child(2) {
     bottom: -10%;
-    right: 30%;
+    right: 0%;
+    @include screen-s {
+      display: none;
+    }
   }
   &:nth-child(3) {
-    top: 30%;
-    left: 0%;
+    bottom: -10%;
+    right: 30%;
   }
   &:nth-child(4) {
     top: -30%;
     right: 0%;
+    @include screen-s {
+      display: none;
+    }
   }
   &:nth-child(5) {
     top: -10%;
     left: 20%;
   }
   &:nth-child(6) {
-    bottom: -10%;
-    right: 0%;
+    top: 30%;
+    left: 0%;
+    @include screen-s {
+      display: none;
+    }
   }
 }
 .round-gradient_first {
@@ -106,18 +115,21 @@
     transparent 50%,
     transparent 100%
   );
+  // border: 1px solid red;
 }
 .round-gradient_second {
   background: radial-gradient(
     $color-second 0%,
     transparent 50%,
     transparent 100%
-  );
-}
-.round-gradient_third {
-  background: radial-gradient(
-    $color-third 0%,
-    transparent 70%,
-    transparent 100%
-  );
+    );
+    // border: 1px solid green;
+  }
+  .round-gradient_third {
+    background: radial-gradient(
+      $color-third 0%,
+      transparent 70%,
+      transparent 100%
+      );
+      // border: 1px solid blue;
 }
