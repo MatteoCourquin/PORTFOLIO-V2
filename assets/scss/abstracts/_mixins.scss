@@ -19,10 +19,6 @@
 
 @mixin background-image {
     background: $color-white;
-    // background: linear-gradient(300deg,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff,#b8e1ff,#bcb6ff);
-    // background-size: 420% 420%;
-    // animation: gradient-animation 30s infinite;
-    // background-attachment: fixed;
 }
 
 @mixin filter-image {
@@ -32,6 +28,6 @@
 }
 
 @mixin filter-background {
-    backdrop-filter: blur( 50px );
-    -webkit-backdrop-filter: blur( 50px );
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }

@@ -155,9 +155,6 @@ header.active{
       aspect-ratio: initial;
 
       justify-content: flex-end;
-
-      backdrop-filter: blur( 0 );
-      -webkit-backdrop-filter: blur( 0 );
     }
     
   }

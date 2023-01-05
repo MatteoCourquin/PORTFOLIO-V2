@@ -7,8 +7,8 @@
     <div class="round-gradient round-gradient_second"></div>
     <div class="round-gradient round-gradient_second"></div>
     <Header />
-    <Hero />
-    <Projects />
+    <!-- <Hero />
+    <Projects /> -->
     <Career />
     <About />
     <Footer />
@@ -25,6 +25,7 @@ import Footer from '../components/Footer.vue';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { log } from 'console';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -36,16 +37,22 @@ export default {
     followMouse() {
       let targets = gsap.utils.toArray('.round-gradient');
       window.addEventListener('mousemove', (e) => {
-        console.log(e);
         gsap.to(targets, {
           duration: 3,
-          xPercent: e.screenX / 40,
-          yPercent: e.screenY / 40,
+          x: e.clientX / 10,
+          y: e.clientY / 10,
           ease: 'power4.out',
           overwrite: 'auto',
           stagger: 0.08,
         });
       });
+    },
+    addBgTitle(title) {
+        if (window.scrollY > (title.offsetTop - 1)) {
+          title.classList.add('title-section-background');
+        } else if (window.scrollY < title.offsetTop) {
+          title.classList.remove('title-section-background');
+        }
     },
     changeTitle() {
       let docTitle = document.title;
@@ -77,6 +84,14 @@ export default {
     },
   },
   mounted() {
+    let titles = document.querySelectorAll('.title-section');
+    titles.forEach((title) => {
+      window.addEventListener('scroll', () => {
+        console.log(title);
+        this.addBgTitle(title);
+      });
+    });
+
     this.animGsapToBottom();
     this.changeTitle();
     this.followMouse();

@@ -10,14 +10,13 @@
           <a :href="'projets/#' + (i + 1)" class="links-img" aria-label="lien vers le projet">
             <nuxt-img :src="project.image" alt="" loading="lazy" sizes="xs:400 sm:700 md:800 lg:1400 xl:1800" quality="10" />
           </a>
-          <!-- <div class="rectangle-image"></div> -->
         </div>
         <div class="project-description">
           <span class="number"><span v-if="i < 9">0</span>{{ i + 1 }}</span>
           <div class="line"></div>
           <h3>{{ project.title }}</h3>
           <p v-html="project.description"></p>
-          <a :href="project.link" target="_blank" class="links" aria-label="lien vers le projet">voir le projet <nuxt-img class="img-links" alt="" src="/images/logos/arrow.svg"/></a>
+          <a :href="project.link" target="_blank" class="links" aria-label="lien vers le projet">voir le projet <nuxt-img class="img-links" alt="" src="/images/logos/arrow-link.svg"/></a>
         </div>
       </div>
 
@@ -102,15 +101,6 @@ export default {
         height: auto;
         z-index: 3;
       }
-      // .rectangle-image{
-      //   position: absolute;
-      //   right: 0;
-      //   bottom: 0;
-      //   width: 70%;
-      //   height: 70px;
-      //   background: $color-purple;
-      //   transform: translateY(40%);
-      // }
     }
     grid-template-columns: 3fr 2fr;
     @include screen-m {

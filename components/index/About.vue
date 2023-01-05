@@ -6,7 +6,6 @@
     <section class="section about">
       <div class="about-description">
         <div class="line"></div>
-        <!-- <div class="rectangle"></div> -->
         <nuxt-img preload src="/images/logos/quote.svg" quality="10" class="anim-about quote" alt=""/>
 
         <p class="anim-about">Je m'appelle Matteo, je suis developpeur front-end depuis {{ years }} ans et {{ months }} mois.</p>
@@ -107,15 +106,6 @@ export default {
     p{
       margin-bottom: 30px;
     }
-    // .rectangle{
-    //   width: 100px;
-    //   height: 50%;
-    //   background: $color-purple;
-    //   position: absolute;
-    //   z-index: -1;
-    //   top: 100px;
-    //   transform: translate(-50%, -40px);
-    // }
     .line{
       width: 2px;
       height: 60%;

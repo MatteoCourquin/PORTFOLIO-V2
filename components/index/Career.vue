@@ -4,37 +4,33 @@
       <h2>Carière</h2>
     </div>
     <section ref="sectionCareer" class="section career">
-      <div ref="sliderContainer" class="slider-container" :style="slider">
-        <div
-          v-for="careerItem in careerItems"
-          class="anim-career card-career"
-          :key="careerItem.id"
-          ref="sliderCard"
-        >
-          <h3>{{ careerItem.title }}</h3>
-          <p>{{ careerItem.description }}</p>
-          <span class="number">{{ careerItem.years }}</span>
-          <!-- <div class="rectangle"></div> -->
+      <div class="slider-section">
+        <div ref="sliderContainer" class="slider-container" :style="slider">
+          <div
+            v-for="careerItem in careerItems"
+            class="anim-career card-career"
+            :key="careerItem.id"
+            ref="sliderCard"
+          >
+            <h3>{{ careerItem.title }}</h3>
+            <p>{{ careerItem.description }}</p>
+            <span class="number">{{ careerItem.years }}</span>
+          </div>
         </div>
       </div>
-    </section>
-
       <div class="flex justify-center gap-20 mt-10">
-        <p
+        <nuxt-img
           @click="slideLeft()"
-          class="cursor-pointer"
-          alt="fleche de direction slider"
-        >
-          gauche
-        </p>
-        <p
+          class="arrow-slider arrow-slider_left"
+          src="/images/logos/arrow-slider.svg"
+        />
+        <nuxt-img
           @click="slideRight()"
-          class="cursor-pointer"
-          alt="fleche de direction slider"
-        >
-          droite
-        </p>
+          class="arrow-slider arrow-slider_right"
+          src="/images/logos/arrow-slider.svg"
+        />
       </div>
+    </section>
   </div>
 </template>
 
@@ -58,7 +54,7 @@ export default {
         },
         {
           title: 'Fortuneo',
-          description: 'Développeur Angular',
+          description: 'Développeur Angular / React',
           years: '2022 - En Cours',
         },
         {
@@ -136,24 +132,45 @@ export default {
 }
 
 .career {
-  overflow: scroll;
+  overflow: hidden;
+  padding: 0 0 0 clamp(20px, 4vw, 60px) !important;
   margin: 0 auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 50vh !important;
   .slider-container {
     display: flex;
   }
 }
 
-// .slider-container{
-  
-// }
+.arrow-slider_right {
+  transform: rotate(90deg);
+  &:hover {
+    transform: rotate(90deg) translateY(-10%) scaleY(1.2);
+  }
+}
+.arrow-slider_left {
+  transform: rotate(-90deg);
+  &:hover {
+    transform: rotate(-90deg) translateY(-10%) scaleY(1.2);
+  }
+}
+.arrow-slider {
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.slider-section {
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 .card-career {
-  border: 1px solid gray;
-  width: 50vw;
+  width: clamp(250px, 50vw, 500px);
   flex-shrink: 0;
   position: relative;
   .number {
@@ -162,15 +179,6 @@ export default {
   h3 {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
   }
-  // .rectangle {
-  //   position: absolute;
-  //   width: 80%;
-  //   height: 30px;
-  //   background: $color-purple;
-  //   right: 0;
-  //   bottom: 0;
-  //   z-index: -1;
-  // }
   .number {
     font-size: clamp(20px, 2vw, 40px);
   }

@@ -20,7 +20,6 @@ export default {
     followMouse() {
       let targets = gsap.utils.toArray('.round-gradient');
       window.addEventListener('mousemove', (e) => {
-        console.log(e);
         gsap.to(targets, {
           duration: 3,
           xPercent: e.screenX / 40,

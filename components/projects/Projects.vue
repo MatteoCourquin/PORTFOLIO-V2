@@ -9,14 +9,13 @@
       <div v-for="(project, i) in projects" :id="i+1" class="card-project" :key="i">
         <div class="project-image">
           <nuxt-img format="png" class="links-img" :src="project.image" sizes="xs:400 sm:700 md:800 lg:1400 xl:1800" alt="projet réalisé par matteo courquin"/>
-          <!-- <div class="rectangle-image"></div> -->
         </div>
         <div class="project-description">
           <span class="number"><span v-if="i < 9">0</span>{{ i + 1 }}</span>
           <div class="line"></div>
           <p v-html="project.description"></p>
           <h3 class="anim-projetcs">{{ project.title }}</h3>
-          <a :href="project.link" target="_blank" aria-label="lien vers le projet" class="anim-projetcs links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow.svg"/></a>
+          <a :href="project.link" target="_blank" aria-label="lien vers le projet" class="anim-projetcs links links-to-project">voir le projet <nuxt-img class="img-links" src="/images/logos/arrow-link.svg"/></a>
         </div>
       </div>
 
