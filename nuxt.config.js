@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀",
+    title: "Matteo Courquin | Développeur Front-End !! 🚀",
     htmlAttrs: {
       lang: 'fr'
     },
@@ -14,8 +14,8 @@ export default {
       { name: 'description', content: 'Un développeur web a votre écoute pour un projet a vos attentes !' },
       { name: 'format-detection', content: 'telephone=no' },
       // Open Graph
-      { property: 'og:title', content: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀" },
-      { property: 'og:description', content: "Matteo Courquin | Le Portfolio d'un Développeur Front-End !! 🚀" },
+      { property: 'og:title', content: "Matteo Courquin | Développeur Front-End !! 🚀" },
+      { property: 'og:description', content: "Matteo Courquin | Développeur Front-End !! 🚀" },
       { property: 'og:url', content: 'matteo.courqu.in' },
       { property: 'og:image', content: '/ogImage.png' },
       // Google
