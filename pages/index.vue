@@ -7,8 +7,8 @@
     <div class="round-gradient round-gradient_second"></div>
     <div class="round-gradient round-gradient_second"></div>
     <Header />
-    <!-- <Hero />
-    <Projects /> -->
+    <Hero />
+    <Projects />
     <Career />
     <About />
     <Footer />
