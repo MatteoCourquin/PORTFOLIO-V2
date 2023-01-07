@@ -146,9 +146,7 @@ export default {
   width: calc(100% - 220px);
   height: 100vh;
   min-height: 900px;
-  padding: 0 clamp(20px, 4vw, 60px)
-    calc(clamp(20px, 4vw, 60px) + clamp(20px, 3.5vw, 60px))
-    clamp(20px, 4vw, 60px);
+  padding: 0 clamp(20px, 4vw, 60px) calc(clamp(20px, 4vw, 60px) + clamp(20px, 3.5vw, 60px)) clamp(20px, 4vw, 60px);
 
   position: relative;
   overflow: hidden;
@@ -220,6 +218,7 @@ export default {
       align-items: center;
       .number {
         margin-right: 5px;
+        white-space: nowrap;
       }
     }
     .seconds {

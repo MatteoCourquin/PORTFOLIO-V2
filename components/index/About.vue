@@ -8,13 +8,13 @@
         <div class="line"></div>
         <nuxt-img preload src="/images/logos/quote.svg" quality="10" class="anim-about quote" alt=""/>
 
-        <p class="anim-about">Je m'appelle Matteo, je suis developpeur front-end depuis {{ years }} ans et {{ months }} mois.</p>
+        <p class="anim-about">Je m'appelle Matteo, je suis developpeur front-end depuis {{ years }} ans.</p>
 
         <p class="anim-about">Initialement parti pour être architecte, c'est lors du confinement que ma vie a pris un autre tournant.</p>
         
-        <p class="anim-about">Tout a commencé depuis <a class="links" href="https://openclassrooms.com/" target="_blank">OpenClassrooms</a>. Le premier site vers lequel on se dirige lorsque l'on s'intéresse au web !</p>
+        <p class="anim-about">Tout a commencé depuis <a class="links" href="https://openclassrooms.com/" target="_blank">OpenClassrooms</a>. Le premier site vers lequel on se dirige lorsque l'on s'intéresse au web ! J'ai ensuite approfondi à l’<a class="links" href="https://www.iim.fr/" target="_blank">IIM</a>, l'une des meilleures école du web. C'est là où le développement web a réellement commencé à me passionner.</p>
 
-        <p class="anim-about">J'ai ensuite approfondi à l’<a class="links" href="https://www.iim.fr/" target="_blank">IIM</a>, l'une des meilleures école du web.</p>
+        <p class="anim-about">Aujourd'hui, je suis en alternance chez <a class="links" href="https://www.fortuneo.fr/" target="_blank">Fortuneo</a> où j'apprends énormément. Il n'y a que la mise en pratique pour assoir ses connaissances. Entouré d'experts sur le métier mes compétences accroissent de jour en jour.</p>
 
         <p class="anim-about">Je suis quelqu'un de pointilleux, persévérant et mes études d'architecture m'ont apporté une certaine sensibilité esthétique et design. Ma vision graphique n’en sera que du plus.</p>
 

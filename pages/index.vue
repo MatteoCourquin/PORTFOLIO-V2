@@ -87,7 +87,6 @@ export default {
     let titles = document.querySelectorAll('.title-section');
     titles.forEach((title) => {
       window.addEventListener('scroll', () => {
-        console.log(title);
         this.addBgTitle(title);
       });
     });
